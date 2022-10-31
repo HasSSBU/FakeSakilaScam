@@ -21,9 +21,11 @@ public class SakilaScamApplication {
 
 	@Autowired
 	private ActorRepository actorRepository;
+	private FilmRepository filmRepository;
 
-	public SakilaScamApplication(ActorRepository actorRepo){
+	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo){
 		this.actorRepository = actorRepo;
+		this.filmRepository = filmRepo;
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaScamApplication.class, args);
@@ -35,17 +37,24 @@ public class SakilaScamApplication {
 		return actorRepository.findAll();
 	}
 
+	@GetMapping("/allFilms")
+	public @ResponseBody
+	Iterable<Film> getAllFilms(){
+		return filmRepository.findAll();
+	}
+
+
+
 	@PutMapping("/putActors/{id}")
-	public ResponseEntity<Actor> updateActor(@PathVariable(value="id") int actor_id,
-											 @Validated @RequestBody Actor actorDetails) throws ResourceAccessException {
-		Actor actor = actorRepository.findById(actor_id)
-				.orElseThrow(() -> new ResourceAccessException("Actor ID not found : : " + actor_id));
+	public ResponseEntity<Actor> updateActor(@PathVariable(value="id") Integer id,
+											 @RequestBody Actor actorDetails) {
 
+		Actor actor = actorRepository.findById(id)
+				.orElseThrow(() -> new ResourceAccessException("Actor ID not found : : " + id));
 
-		actorDetails.setActor_id(actorDetails.getActor_id());
-		actorDetails.setFirstName(actorDetails.getFirstName());
-		actorDetails.setLastName(actorDetails.getLastName());
-		final Actor updatedActor = actorRepository.save(actorDetails);
+		actor.setFirstName(actorDetails.getFirstName());
+		actor.setLastName(actorDetails.getLastName());
+		final Actor updatedActor = actorRepository.save(actor);
 		return ResponseEntity.ok(updatedActor);
 	}
 
@@ -59,6 +68,11 @@ public class SakilaScamApplication {
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;
+	}
+
+	@PostMapping("/Actor")
+	public Actor createActor(@RequestBody Actor newActor) {
+		return actorRepository.save(newActor);
 	}
 
 }
