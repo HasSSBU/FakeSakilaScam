@@ -9,8 +9,8 @@ public class ActorTest {
 
     @org.junit.Test
     public void testGetters() {
-        Assertions.assertEquals(testActor.getFirstName(), "Fake");
-        Assertions.assertEquals(testActor.getFirstName(), "Name");
+        Assertions.assertEquals("Fake",testActor.getFirstName());
+        Assertions.assertEquals("Name",testActor.getLastName());
     }
 
     @org.junit.Test
@@ -19,8 +19,8 @@ public class ActorTest {
         testActor.setFirstName("notFake");
         testActor.setLastName("lastName");
 
-        Assertions.assertEquals(testActor.getActor_id(), 203);
-        Assertions.assertEquals(testActor.getFirstName(), "notFake");
-        Assertions.assertEquals(testActor.getFirstName(), "lastName");
+        Assertions.assertEquals(203,testActor.getActor_id());
+        Assertions.assertEquals("notFake",testActor.getFirstName());
+        Assertions.assertEquals("lastName",testActor.getLastName());
     }
 }

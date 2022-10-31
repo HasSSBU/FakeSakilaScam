@@ -9,12 +9,12 @@ public class FilmTest {
 
     @org.junit.Test
     public void testGetters(){
-        Assertions.assertEquals(testFilm.getTitle(),"testTitle");
-        Assertions.assertEquals(testFilm.getDescription(),"testDes");
-        Assertions.assertEquals(testFilm.getLanguage_id(),1);
-        Assertions.assertEquals(testFilm.getLength(),50);
-        Assertions.assertEquals(testFilm.getTitle(),1);
-        Assertions.assertEquals(testFilm.getRating(),"testRate");
+        Assertions.assertEquals("testTitle",testFilm.getTitle());
+        Assertions.assertEquals("testDes",testFilm.getDescription());
+        Assertions.assertEquals(1,testFilm.getLanguage_id());
+        Assertions.assertEquals(50,testFilm.getLength());
+        Assertions.assertEquals(1, testFilm.getTitle());
+        Assertions.assertEquals("testRate",testFilm.getRating());
     }
     @org.junit.Test
     public void testSetters(){
@@ -26,12 +26,12 @@ public class FilmTest {
         testFilm.setRental_rate(2);
         testFilm.setRating("testRate1");
 
-        Assertions.assertEquals(testFilm.getTitle(),"testTitle1");
-        Assertions.assertEquals(testFilm.getDescription(),"testDes1");
-        Assertions.assertEquals(testFilm.getLanguage_id(),2);
-        Assertions.assertEquals(testFilm.getLength(),51);
-        Assertions.assertEquals(testFilm.getRental_rate(),2);
-        Assertions.assertEquals(testFilm.getRating(),"testRate1");
+        Assertions.assertEquals("testTitle1",testFilm.getTitle());
+        Assertions.assertEquals("testDes1",testFilm.getDescription());
+        Assertions.assertEquals(2,testFilm.getLanguage_id());
+        Assertions.assertEquals(51,testFilm.getLength());
+        Assertions.assertEquals(2, testFilm.getTitle());
+        Assertions.assertEquals("testRate1",testFilm.getRating());
     }
 
 }
