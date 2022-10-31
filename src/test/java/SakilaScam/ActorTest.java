@@ -7,13 +7,13 @@ public class ActorTest {
 
     Actor testActor = new Actor("Fake","Name");
 
-    @org.junit.Test
+    @Test
     public void testGetters() {
         Assertions.assertEquals("Fake",testActor.getFirstName());
         Assertions.assertEquals("Name",testActor.getLastName());
     }
 
-    @org.junit.Test
+    @Test
     public void testSetters(){
         testActor.setActor_id(203);
         testActor.setFirstName("notFake");

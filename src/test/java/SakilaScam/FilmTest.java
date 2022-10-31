@@ -7,16 +7,16 @@ public class FilmTest {
 
     Film testFilm = new Film("testTitle", "testDes", 1, 50, 1, "testRate");
 
-    @org.junit.Test
+    @Test
     public void testGetters(){
         Assertions.assertEquals("testTitle",testFilm.getTitle());
         Assertions.assertEquals("testDes",testFilm.getDescription());
         Assertions.assertEquals(1,testFilm.getLanguage_id());
         Assertions.assertEquals(50,testFilm.getLength());
-        Assertions.assertEquals(1, testFilm.getTitle());
+        Assertions.assertEquals(1, testFilm.getRental_rate());
         Assertions.assertEquals("testRate",testFilm.getRating());
     }
-    @org.junit.Test
+    @Test
     public void testSetters(){
         testFilm.setFilm_id(203);
         testFilm.setTitle("testTitle1");
@@ -30,7 +30,7 @@ public class FilmTest {
         Assertions.assertEquals("testDes1",testFilm.getDescription());
         Assertions.assertEquals(2,testFilm.getLanguage_id());
         Assertions.assertEquals(51,testFilm.getLength());
-        Assertions.assertEquals(2, testFilm.getTitle());
+        Assertions.assertEquals(2, testFilm.getRental_rate());
         Assertions.assertEquals("testRate1",testFilm.getRating());
     }
 
