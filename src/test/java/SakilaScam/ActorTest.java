@@ -6,11 +6,18 @@ import org.junit.jupiter.api.Test;
 public class ActorTest {
 
     Actor testActor = new Actor("Fake","Name");
+    Actor testActor2 = new Actor();
 
     @Test
     public void testGetters() {
         Assertions.assertEquals("Fake",testActor.getFirstName());
         Assertions.assertEquals("Name",testActor.getLastName());
+    }
+
+    @Test
+    public void testGetters2(){
+        Assertions.assertNull(testActor2.getFirstName());
+        Assertions.assertNull(testActor2.getLastName());
     }
 
     @Test
