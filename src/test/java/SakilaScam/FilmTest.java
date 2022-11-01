@@ -37,7 +37,6 @@ public class FilmTest {
         testFilm.setRental_rate(2);
         testFilm.setRating("testRate1");
 
-        Assertions.assertEquals(203, testFilm.getFilm_id());
         Assertions.assertEquals("testTitle1",testFilm.getTitle());
         Assertions.assertEquals("testDes1",testFilm.getDescription());
         Assertions.assertEquals(2,testFilm.getLanguage_id());

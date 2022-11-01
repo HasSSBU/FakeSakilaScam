@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @SpringBootApplication
 @RestController
@@ -45,12 +43,7 @@ public class SakilaScamApplication {
 		return filmRepository.findAll();
 	}
 
-//	public interface findId{
-//		List<Film> findAll();
-//		void save(Film film);
-//		Optional<Film> findById(Long id);
-//		void delete(long id);
-//	}
+
 
 	@PutMapping("/putActors/{id}")
 	public ResponseEntity<Actor> updateActor(@PathVariable(value="id") Integer id,
