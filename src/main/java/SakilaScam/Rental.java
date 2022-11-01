@@ -7,19 +7,13 @@ import javax.persistence.Id;
 
 public class Rental {
 
-    @Id
     @Column(name = "inventory_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int inventory_id;
 
-    @Id
     @Column(name = "customer_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int customer_id;
 
-    @Id
     @Column(name= "staff_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int staff_id;
 
     @Id

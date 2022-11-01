@@ -12,19 +12,13 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int payment_id;
 
-    @Id
     @Column(name = "customer_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int customer_id;
 
-    @Id
     @Column(name= "staff_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int staff_id;
 
-    @Id
     @Column(name= "rental_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int rental_id;
 
     @Column(name = "amount")
