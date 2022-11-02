@@ -21,6 +21,7 @@ public class FilmTest {
 
     @Test
     public void testGetters2(){
+        Assertions.assertEquals(0, testFilm2.getFilm_id());
         Assertions.assertNull(testFilm2.getTitle());
         Assertions.assertNull(testFilm2.getDescription());
         Assertions.assertEquals(0 ,testFilm2.getLanguage_id());

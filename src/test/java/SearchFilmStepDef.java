@@ -16,9 +16,14 @@ public class SearchFilmStepDef{
     ActorRepository actRepo;
     @Autowired
     FilmRepository filmRepo;
+    @Autowired
     CategoryRepository categoryRepo;
     @Autowired
-    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo,categoryRepo);
+    Payment_Repository paymentRepo;
+    @Autowired
+    CustomerRepository customerRepo;
+    @Autowired
+    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo,categoryRepo,paymentRepo,customerRepo);
     String title;
     String result;
 

@@ -22,11 +22,15 @@ public class SakilaScamApplication {
 	public ActorRepository actorRepository;
 	public FilmRepository filmRepository;
 	public CategoryRepository categoryRepository;
+	public Payment_Repository paymentReopsitory;
+	public CustomerRepository customerRepository;
 
-	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo){
+	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo, Payment_Repository paymentReop, CustomerRepository customerRepo){
 		this.actorRepository = actorRepo;
 		this.filmRepository = filmRepo;
 		this.categoryRepository = categoryRepo;
+		this.paymentReopsitory = paymentReop;
+		this.customerRepository = customerRepo;
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaScamApplication.class, args);

@@ -15,7 +15,11 @@ public class AddedCostStepDef {
     FilmRepository filmRepo;
     CategoryRepository categoryRepo;
     @Autowired
-    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo,categoryRepo);
+    Payment_Repository paymentRepo;
+    @Autowired
+    CustomerRepository customerRepo;
+    @Autowired
+    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo,categoryRepo, paymentRepo, customerRepo);
     String title;
     double rent;
     double replace;
