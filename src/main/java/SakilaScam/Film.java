@@ -1,6 +1,7 @@
 package SakilaScam;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name= "film")
@@ -11,6 +12,20 @@ public class Film {
     @Column(name = "film_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int film_id;
+
+    @ManyToMany
+    @JoinTable(
+            name = "film_actor",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "actor_id"))
+    Set<Actor> names;
+
+    @ManyToMany
+    @JoinTable(
+            name = "film_category",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    Set<Category> categories;
 
     @Column(name = "title")
     String title;
