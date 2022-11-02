@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @SpringBootApplication
 @RestController
@@ -20,8 +22,8 @@ import java.util.Map;
 public class SakilaScamApplication {
 
 	@Autowired
-	private ActorRepository actorRepository;
-	private FilmRepository filmRepository;
+	public ActorRepository actorRepository;
+	public FilmRepository filmRepository;
 
 	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo){
 		this.actorRepository = actorRepo;
@@ -42,8 +44,18 @@ public class SakilaScamApplication {
 	Iterable<Film> getAllFilms(){
 		return filmRepository.findAll();
 	}
+	@GetMapping("/Film/{id}")
+	public @ResponseBody
+	Optional<Film> getFilm(@PathVariable(value="id") Integer id){
+		return filmRepository.findById(id);
+	}
 
-
+	@GetMapping("/FilmName/{name}")
+	public @ResponseBody
+	String getFilmByName(@PathVariable(value="name") String name){
+		Film film = filmRepository.findByTitle(name);
+		return film.getTitle();
+	}
 
 	@PutMapping("/putActors/{id}")
 	public ResponseEntity<Actor> updateActor(@PathVariable(value="id") Integer id,
