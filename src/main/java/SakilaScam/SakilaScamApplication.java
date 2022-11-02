@@ -22,14 +22,14 @@ public class SakilaScamApplication {
 	public ActorRepository actorRepository;
 	public FilmRepository filmRepository;
 	public CategoryRepository categoryRepository;
-	public Payment_Repository paymentReopsitory;
+	public Payment_Repository paymentRepository;
 	public CustomerRepository customerRepository;
 
 	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo, Payment_Repository paymentReop, CustomerRepository customerRepo){
 		this.actorRepository = actorRepo;
 		this.filmRepository = filmRepo;
 		this.categoryRepository = categoryRepo;
-		this.paymentReopsitory = paymentReop;
+		this.paymentRepository = paymentReop;
 		this.customerRepository = customerRepo;
 	}
 	public static void main(String[] args) {
@@ -52,6 +52,16 @@ public class SakilaScamApplication {
 	public @ResponseBody
 	List<Category> getAllCategories(){
 		return categoryRepository.findAll();
+	}
+	@GetMapping("/allPayments")
+	public @ResponseBody
+	List<Payment> getAllPayments(){
+		return paymentRepository.findAll();
+	}
+	@GetMapping("/allCustomers")
+	public @ResponseBody
+	List<Customer> getAllCustomers(){
+		return customerRepository.findAll();
 	}
 
 	@GetMapping("/Film/{id}")

@@ -21,4 +21,19 @@ public class CustomerTest {
         Assertions.assertNull(testCustomer2.getLast_name());
         Assertions.assertNull(testCustomer2.getEmail());
     }
+
+    @Test
+    public void testSetters(){
+        testCustomer.setCustomer_id(1);
+        testCustomer.setFirst_name("Boo");
+        testCustomer.setLast_name("Khaki");
+        testCustomer.setEmail("BooKhaki@FourSkin.com");
+
+        Assertions.assertEquals(1, testCustomer.getCustomer_id());
+        Assertions.assertEquals("Boo",testCustomer.getFirst_name());
+        Assertions.assertEquals("Khaki", testCustomer.getLast_name());
+        Assertions.assertEquals("BooKhaki@FourSkin.com", testCustomer.getEmail());
+
+
+    }
 }
