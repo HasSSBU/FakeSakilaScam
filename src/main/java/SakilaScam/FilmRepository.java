@@ -2,8 +2,6 @@ package SakilaScam;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-import java.util.Optional;
 
 public interface FilmRepository  extends JpaRepository<Film, Integer>{
     Film findByTitle(String title);

@@ -1,8 +1,6 @@
 import java.lang.*;
-import SakilaScam.ActorRepository;
-import SakilaScam.Film;
-import SakilaScam.FilmRepository;
-import SakilaScam.SakilaScamApplication;
+
+import SakilaScam.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,8 +16,9 @@ public class SearchFilmStepDef{
     ActorRepository actRepo;
     @Autowired
     FilmRepository filmRepo;
+    CategoryRepository categoryRepo;
     @Autowired
-    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo);
+    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo,categoryRepo);
     String title;
     String result;
 

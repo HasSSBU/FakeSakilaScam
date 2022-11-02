@@ -1,12 +1,9 @@
 package SakilaScam;
 
-import org.apache.maven.wagon.ResourceDoesNotExistException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
@@ -24,10 +21,12 @@ public class SakilaScamApplication {
 	@Autowired
 	public ActorRepository actorRepository;
 	public FilmRepository filmRepository;
+	public CategoryRepository categoryRepository;
 
-	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo){
+	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo){
 		this.actorRepository = actorRepo;
 		this.filmRepository = filmRepo;
+		this.categoryRepository = categoryRepo;
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaScamApplication.class, args);
@@ -44,6 +43,13 @@ public class SakilaScamApplication {
 	Iterable<Film> getAllFilms(){
 		return filmRepository.findAll();
 	}
+
+	@GetMapping("/allCategories")
+	public @ResponseBody
+	List<Category> getAllCategories(){
+		return categoryRepository.findAll();
+	}
+
 	@GetMapping("/Film/{id}")
 	public @ResponseBody
 	Optional<Film> getFilm(@PathVariable(value="id") Integer id){
