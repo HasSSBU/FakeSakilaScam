@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class FilmTest {
 
-    Film testFilm = new Film("testTitle", "testDes", 1, 50, 1, "testRate");
+    Film testFilm = new Film("testTitle", "testDes", 1, 50, 1, "testRate", 20.0);
     Film testFilm2 = new Film();
 
     @Test
@@ -16,6 +16,7 @@ public class FilmTest {
         Assertions.assertEquals(50,testFilm.getLength());
         Assertions.assertEquals(1, testFilm.getRental_rate());
         Assertions.assertEquals("testRate",testFilm.getRating());
+        Assertions.assertEquals(20.0, testFilm.getReplacement_cost());
     }
 
     @Test
@@ -26,6 +27,7 @@ public class FilmTest {
         Assertions.assertEquals(0,testFilm2.getLength());
         Assertions.assertEquals(0, testFilm2.getRental_rate());
         Assertions.assertNull(testFilm2.getRating());
+        Assertions.assertEquals(0, testFilm2.getReplacement_cost());
     }
     @Test
     public void testSetters(){
@@ -36,6 +38,7 @@ public class FilmTest {
         testFilm.setLength(51);
         testFilm.setRental_rate(2);
         testFilm.setRating("testRate1");
+        testFilm.setReplacement_cost(15.0);
 
         Assertions.assertEquals("testTitle1",testFilm.getTitle());
         Assertions.assertEquals("testDes1",testFilm.getDescription());
@@ -43,6 +46,7 @@ public class FilmTest {
         Assertions.assertEquals(51,testFilm.getLength());
         Assertions.assertEquals(2, testFilm.getRental_rate());
         Assertions.assertEquals("testRate1",testFilm.getRating());
+        Assertions.assertEquals(15.0, testFilm.getReplacement_cost());
     }
 
 }

@@ -40,19 +40,23 @@ public class Film {
     int length;
 
     @Column(name = "rental_rate")
-    int rental_rate;
+    double rental_rate;
 
     @Column(name = "rating")
     String rating;
 
+    @Column(name = "replacement_cost")
+    double replacement_cost;
+
     //Constructor
-    public Film(String title, String des, int lang, int len, int rent, String rate) {
+    public Film(String title, String des, int lang, int len, double rent, String rate, double replacement) {
         this.title = title;
         this.description = des;
         this.language_id = lang;
         this.length = len;
         this.rental_rate = rent;
         this.rating = rate;
+        this.replacement_cost = replacement;
     }
 
     public Film() {
@@ -100,11 +104,11 @@ public class Film {
         this.length = length;
     }
 
-    public int getRental_rate() {
+    public double getRental_rate() {
         return rental_rate;
     }
 
-    public void setRental_rate(int rental_rate) {
+    public void setRental_rate(double rental_rate) {
         this.rental_rate = rental_rate;
     }
 
@@ -114,5 +118,12 @@ public class Film {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+    public double getReplacement_cost() {
+        return replacement_cost;
+    }
+
+    public void setReplacement_cost(double replacement_cost) {
+        this.replacement_cost = replacement_cost;
     }
 }
