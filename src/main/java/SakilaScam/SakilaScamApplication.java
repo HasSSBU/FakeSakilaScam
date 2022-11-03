@@ -107,4 +107,12 @@ public class SakilaScamApplication {
 		return actorRepository.save(newActor);
 	}
 
+
+	@GetMapping("/Costs/{name}")
+	public @ResponseBody
+	double getCostOfFilm(@PathVariable(value="name") String name){
+		Film film = filmRepository.findByTitle(name);
+		return film.getRental_rate() + film.getReplacement_cost();
+	}
+
 }

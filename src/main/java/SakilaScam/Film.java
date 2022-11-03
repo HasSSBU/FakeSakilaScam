@@ -28,7 +28,7 @@ public class Film {
     Set<Category> categories;
 
     @OneToMany(mappedBy="film")
-    private Set<Inventory> inventory_id;
+    private Set<Inventory> inventory;
 
     @Column(name = "title")
     String title;
@@ -147,11 +147,11 @@ public class Film {
         this.categories = categories;
     }
 
-    public Set<Inventory> getInventory_id() {
-        return inventory_id;
+    public Set<Inventory> getInventory() {
+        return inventory;
     }
 
-    public void setInventory_id(Set<Inventory> inventory_id) {
-        this.inventory_id = inventory_id;
+    public void setInventory_id(Set<Inventory> inventory) {
+        this.inventory= inventory;
     }
 }
