@@ -25,6 +25,14 @@ public class Rental {
     @Column(name = "return_date")
     String return_date;
 
+    public Rental(String rentDate, String returnDate){
+        this.rental_date = rentDate;
+        this.return_date = returnDate;
+    }
+
+    public Rental(){
+
+    }
 
     public int getRental_id() {
         return rental_id;
