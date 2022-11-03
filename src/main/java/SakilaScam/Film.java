@@ -27,6 +27,9 @@ public class Film {
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     Set<Category> categories;
 
+    @OneToMany(mappedBy="film")
+    private Set<Inventory> inventory_id;
+
     @Column(name = "title")
     String title;
 
@@ -47,6 +50,7 @@ public class Film {
 
     @Column(name = "replacement_cost")
     double replacement_cost;
+
 
     //Constructor
     public Film(String title, String des, int lang, int len, double rent, String rate, double replacement) {
@@ -125,5 +129,29 @@ public class Film {
 
     public void setReplacement_cost(double replacement_cost) {
         this.replacement_cost = replacement_cost;
+    }
+
+    public Set<Actor> getNames() {
+        return names;
+    }
+
+    public void setNames(Set<Actor> names) {
+        this.names = names;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
+    public Set<Inventory> getInventory_id() {
+        return inventory_id;
+    }
+
+    public void setInventory_id(Set<Inventory> inventory_id) {
+        this.inventory_id = inventory_id;
     }
 }

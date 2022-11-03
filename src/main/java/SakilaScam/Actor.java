@@ -46,6 +46,7 @@ public class Actor {
         this.actor_id = actor_id;
     }
 
+
     public String getFirstName() {
         return first_name;
     }
@@ -60,5 +61,12 @@ public class Actor {
 
     public void setLastName(String last_name) {
         this.last_name = last_name;
+    }
+
+    public Set<Actor> getFilms() {
+        return films;
+    }
+    public void setFilms(Set<Actor> films) {
+        this.films = films;
     }
 }

@@ -26,7 +26,6 @@ public class Category {
     }
 
     public Category(){
-
     }
 
     public int getCategory_id() {
@@ -43,5 +42,12 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Film> getFilms() {
+        return films;
+    }
+    public void setFilms(Set<Film> films) {
+        this.films = films;
     }
 }
