@@ -24,12 +24,18 @@ public class SakilaScamApplication {
 	public final PaymentRepository paymentRepository;
 	public final CustomerRepository customerRepository;
 
-	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo, PaymentRepository paymentReop, CustomerRepository customerRepo){
+	public final InventoryRepository inventoryRepository;
+
+
+	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo, PaymentRepository paymentReop,
+								 CustomerRepository customerRepo, InventoryRepository inventoryRepo){
 		this.actorRepository = actorRepo;
 		this.filmRepository = filmRepo;
 		this.categoryRepository = categoryRepo;
 		this.paymentRepository = paymentReop;
 		this.customerRepository = customerRepo;
+		this.inventoryRepository = inventoryRepo;
+
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaScamApplication.class, args);
@@ -112,6 +118,12 @@ public class SakilaScamApplication {
 	double getCostOfFilm(@PathVariable(value="name") String name){
 		Film film = filmRepository.findByTitle(name);
 		return film.getRentalRate() + film.getReplacementCost();
+	}
+
+	@PostMapping("/addPayment")
+	public Payment addPayment(@RequestBody PaymentModel newPaymentModel) {
+		Payment newPayment = new Payment(newPaymentModel.getAmount());
+		return paymentRepository.save(newPayment);
 	}
 
 }

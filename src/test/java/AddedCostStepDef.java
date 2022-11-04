@@ -20,7 +20,9 @@ public class AddedCostStepDef {
     @Autowired
     CustomerRepository customerRepo;
     @Autowired
-    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo,categoryRepo, paymentRepo, customerRepo);
+    InventoryRepository inventoryRepo;
+    @Autowired
+    SakilaScamApplication testApp = new SakilaScamApplication(actRepo, filmRepo,categoryRepo, paymentRepo, customerRepo, inventoryRepo);
     String title;
     double rent;
     double replace;

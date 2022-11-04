@@ -15,8 +15,10 @@ class MyFirstMockitoTest {
     CategoryRepository categoryRepository = mock(CategoryRepository.class);
     PaymentRepository paymentRepository = mock(PaymentRepository.class);
     CustomerRepository customerRepository = mock(CustomerRepository.class);
+    InventoryRepository inventoryRepository = mock(InventoryRepository.class);
 
-    SakilaScamApplication testApp= new SakilaScamApplication(actorRepository, filmRepository, categoryRepository, paymentRepository,  customerRepository);
+    SakilaScamApplication testApp= new SakilaScamApplication(actorRepository, filmRepository, categoryRepository, paymentRepository,
+            customerRepository, inventoryRepository);
 
     Film testFilm1 = new Film("My Film", "About Me", 1 ,134, 2.99, "5/5", 15.99);
     Film testFilm2 = new Film("Your Film", "About You", 1 ,7, 0.49, "0/5", 0);
@@ -108,7 +110,7 @@ class MyFirstMockitoTest {
     }
 
     @Test
-    void testPostMap(){
+    void testPostMapActor(){
         ActorModel actorModelUpdate = new ActorModel("The Rock", "Johnson");
         Actor actorUpdate = new Actor(actorModelUpdate.getFirstName(), actorModelUpdate.getLastName());
         when(actorRepository.save(any(Actor.class))).thenReturn(actorUpdate);
@@ -124,5 +126,14 @@ class MyFirstMockitoTest {
         double expectedResult = testFilm.getReplacementCost()+testFilm.getRentalRate();
         double actualResult = testApp.getCostOfFilm("My Film");
         Assertions.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    void testPostMapPayment(){
+        PaymentModel paymentModelUpdate = new PaymentModel(20.99);
+        Payment testPayment = new Payment(paymentModelUpdate.getAmount());
+        when(paymentRepository.save(any(Payment.class))).thenReturn(testPayment);
+        Payment result = testApp.addPayment(paymentModelUpdate);
+        Assertions.assertEquals(testPayment, result);
     }
 }
