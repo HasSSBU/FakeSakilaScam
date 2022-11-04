@@ -118,4 +118,13 @@ public class MyFirstMockitoTest {
         testApp.createActor(actorModelUpdate);
         Assertions.assertEquals(actorUpdate, testApp.actorRepository.getReferenceById(3));
     }
+
+    @Test
+    void testTotalCostOfFilm(){
+        when(filmRepository.findByTitle("My Film")).thenReturn(testFilm1);
+        Film testFilm = filmRepository.findByTitle("My Film");
+        double expectedResult = testFilm.getReplacement_cost()+testFilm.getRental_rate();
+        double actualResult = testApp.getCostOfFilm("My Film");
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
 }
