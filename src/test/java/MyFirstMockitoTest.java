@@ -43,47 +43,47 @@ public class MyFirstMockitoTest {
 
 
     @Test
-    public void GetMapTestFilms(){
+    void GetMapTestFilms(){
         when(filmRepository.findAll()).thenReturn(allFilms);
         Iterable<Film> result = testApp.getAllFilms();
         Assertions.assertEquals(allFilms, result);
     }
 
     @Test
-    public void getMapTestActors(){
+    void getMapTestActors(){
         when(actorRepository.findAll()).thenReturn(allActors);
         Iterable<Actor> result = testApp.getAllActors();
         Assertions.assertEquals(allActors, result);
     }
 
     @Test
-    public void getMapTestCategories(){
+    void getMapTestCategories(){
         when(categoryRepository.findAll()).thenReturn(allCategories);
         Iterable<Category> result = testApp.getAllCategories();
         Assertions.assertEquals(allCategories, result);
     }
     @Test
-    public void getMapTestCustomers(){
+    void getMapTestCustomers(){
         when(customerRepository.findAll()).thenReturn(allCustomers);
         Iterable<Customer> result = testApp.getAllCustomers();
         Assertions.assertEquals(allCustomers, result);
     }
     @Test
-    public void getMapTestPayments(){
+    void getMapTestPayments(){
         when(paymentRepository.findAll()).thenReturn(allPayments);
         Iterable<Payment> result = testApp.getAllPayments();
         Assertions.assertEquals(allPayments, result);
     }
 
     @Test
-    public void testGetMapFilmByName(){
+    void testGetMapFilmByName(){
         when(filmRepository.findByTitle("My Film")).thenReturn(testFilm1);
         String result = testApp.getFilmByName("My Film");
         Assertions.assertEquals(testFilm1.getTitle(), result);
     }
 
     @Test
-    public void testGetMapFilmById(){
+    void testGetMapFilmById(){
         testFilm2.setFilm_id(1);
         Optional<Film> searchedFilmId = Optional.of(testFilm2);
         when(filmRepository.findById(1)).thenReturn(searchedFilmId);
@@ -92,12 +92,13 @@ public class MyFirstMockitoTest {
     }
 
     @Test
-    public void testPutMapActor(){
+    void testPutMapActor(){
         testActor2.setActor_id(2);
-        Actor actorToUpdate = new Actor("John","Cena");
-        when(actorRepository.save(any(Actor.class))).thenReturn(actorToUpdate);
+        ActorModel actorToUpdate = new ActorModel("John","Cena");
+        Actor actorUpdate = new Actor(actorToUpdate.getFirst_name(),actorToUpdate.getLast_name());
+        when(actorRepository.save(any(Actor.class))).thenReturn(actorUpdate);
         when(actorRepository.findById(2)).thenReturn(Optional.ofNullable(testActor2));
         Actor updated = testApp.updateActor(2, actorToUpdate);
-        Assertions.assertEquals(updated, actorToUpdate);
+        Assertions.assertEquals(updated, actorUpdate);
     }
 }

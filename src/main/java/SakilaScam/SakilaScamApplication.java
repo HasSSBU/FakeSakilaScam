@@ -3,7 +3,6 @@ package SakilaScam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
@@ -34,6 +33,26 @@ public class SakilaScamApplication {
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaScamApplication.class, args);
+	}
+
+	public ActorRepository getActorRepository() {
+		return actorRepository;
+	}
+
+	public FilmRepository getFilmRepository() {
+		return filmRepository;
+	}
+
+	public CategoryRepository getCategoryRepository() {
+		return categoryRepository;
+	}
+
+	public Payment_Repository getPaymentRepository() {
+		return paymentRepository;
+	}
+
+	public CustomerRepository getCustomerRepository() {
+		return customerRepository;
 	}
 
 	@GetMapping("/allActors")
@@ -79,7 +98,8 @@ public class SakilaScamApplication {
 
 	@PutMapping("/putActors/{id}")
 	public Actor updateActor(@PathVariable(value="id") Integer id,
-											 @RequestBody Actor actorDetails) {
+											 @RequestBody ActorModel actorModelDetails) {
+		Actor actorDetails = new Actor(actorModelDetails.getFirst_name(), actorModelDetails.getLast_name());
 		Actor actor = actorRepository.findById(id)
 				.orElseThrow(() -> new ResourceAccessException("Actor ID not found : : " + id));
 

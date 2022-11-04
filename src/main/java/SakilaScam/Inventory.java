@@ -20,6 +20,7 @@ public class Inventory {
     private Film film;
 
     public Inventory(){
+        //Constructor does not need arguments
     }
 
     public int getInventory_id() {
