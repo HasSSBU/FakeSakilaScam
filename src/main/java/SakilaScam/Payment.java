@@ -7,7 +7,7 @@ public class Payment {
     @Id
     @Column(name = "payment_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int film_id;
+    int filmId;
 
     @ManyToOne
     @JoinColumn(name= "customer_id")
@@ -29,8 +29,8 @@ public class Payment {
         this.amount = amount;
     }
 
-    public int getFilm_id() {
-        return film_id;
+    public int getFilmId() {
+        return filmId;
     }
 
     public double getAmount() {

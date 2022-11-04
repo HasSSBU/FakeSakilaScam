@@ -10,7 +10,7 @@ public class Inventory {
     @Id
     @Column(name = "inventory_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int inventory_id;
+    int inventoryId;
 
     @OneToMany(mappedBy="inventory")
     private Set<Rental> rental;
@@ -23,12 +23,12 @@ public class Inventory {
         //Constructor does not need arguments
     }
 
-    public int getInventory_id() {
-        return inventory_id;
+    public int getInventoryId() {
+        return inventoryId;
     }
 
-    public void setInventory_id(int inventory_id) {
-        this.inventory_id = inventory_id;
+    public void setInventoryId(int inventory_id) {
+        this.inventoryId = inventoryId;
     }
 
 }

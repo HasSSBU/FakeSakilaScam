@@ -10,52 +10,52 @@ public class Customer {
     @Id
     @Column(name = "customer_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int customer_id;
+    int customerId;
 
     @OneToMany(mappedBy="customer")
     private Set<Payment> payment;
 
     @Column(name = "first_name")
-    String first_name;
+    String firstName;
 
     @Column(name = "last_name")
-    String last_name;
+    String lastName;
 
     @Column(name = "email")
     String email;
 
 
     public Customer(String fName, String lName, String email){
-        this.first_name = fName;
-        this.last_name = lName;
+        this.firstName = fName;
+        this.lastName = lName;
         this.email = email;
     }
     public Customer (){
 
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(int customer_id) {
+        this.customerId = customerId;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String first_name) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String last_name) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

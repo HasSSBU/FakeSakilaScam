@@ -11,7 +11,7 @@ public class Actor {
     @Id
     @Column(name= "actor_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int actor_id;
+    int actorId;
 
     @ManyToMany
     @JoinTable(
@@ -21,15 +21,15 @@ public class Actor {
     Set<Actor> films;
 
     @Column(name= "first_name")
-    String first_name;
+    String firstName;
 
     @Column(name= "last_name")
-    String last_name;
+    String lastName;
 
     //Constructor
     public Actor(String fName, String lName){
-        this.first_name = fName;
-        this.last_name = lName;
+        this.firstName = fName;
+        this.lastName = lName;
     }
 
     public Actor(){
@@ -37,29 +37,29 @@ public class Actor {
     }
 
     //Methods
-    public int getActor_id() {
-        return actor_id;
+    public int getActorId() {
+        return actorId;
     }
 
-    public void setActor_id(int actor_id) {
-        this.actor_id = actor_id;
+    public void setActorId(int actorId) {
+        this.actorId = actorId;
     }
 
 
     public String getFirstName() {
-        return first_name;
+        return firstName;
     }
 
-    public void setFirstName(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return last_name;
+        return lastName;
     }
 
     public void setLastName(String last_name) {
-        this.last_name = last_name;
+        this.lastName = last_name;
     }
 
 }

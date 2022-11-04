@@ -82,7 +82,7 @@ public class MyFirstMockitoTest {
 
     @Test
     void testGetMapFilmById(){
-        testFilm2.setFilm_id(1);
+        testFilm2.setFilmId(1);
         Optional<Film> searchedFilmId = Optional.of(testFilm2);
         when(filmRepository.findById(1)).thenReturn(searchedFilmId);
         Optional<Film> result = testApp.getFilm(1);
@@ -91,7 +91,7 @@ public class MyFirstMockitoTest {
 
     @Test
     void testPutMapActor(){
-        testActor2.setActor_id(2);
+        testActor2.setActorId(2);
         ActorModel actorToUpdate = new ActorModel("John","Cena");
         Actor actorUpdate = new Actor(actorToUpdate.getFirst_name(),actorToUpdate.getLast_name());
         when(actorRepository.save(any(Actor.class))).thenReturn(actorUpdate);
@@ -123,7 +123,7 @@ public class MyFirstMockitoTest {
     void testTotalCostOfFilm(){
         when(filmRepository.findByTitle("My Film")).thenReturn(testFilm1);
         Film testFilm = filmRepository.findByTitle("My Film");
-        double expectedResult = testFilm.getReplacement_cost()+testFilm.getRental_rate();
+        double expectedResult = testFilm.getReplacementCost()+testFilm.getRentalRate();
         double actualResult = testApp.getCostOfFilm("My Film");
         Assertions.assertEquals(expectedResult, actualResult);
     }

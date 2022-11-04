@@ -11,7 +11,7 @@ public class Film {
     @Id
     @Column(name = "film_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int film_id;
+    int filmId;
 
     @ManyToMany
     @JoinTable(
@@ -37,30 +37,30 @@ public class Film {
     String description;
 
     @Column(name = "language_id")
-    int language_id;
+    int languageId;
 
     @Column(name = "length")
     int length;
 
     @Column(name = "rental_rate")
-    double rental_rate;
+    double rentalRate;
 
     @Column(name = "rating")
     String rating;
 
     @Column(name = "replacement_cost")
-    double replacement_cost;
+    double replacementCost;
 
 
     //Constructor
     public Film(String title, String des, int lang, int len, double rent, String rate, double replacement) {
         this.title = title;
         this.description = des;
-        this.language_id = lang;
+        this.languageId = lang;
         this.length = len;
-        this.rental_rate = rent;
+        this.rentalRate = rent;
         this.rating = rate;
-        this.replacement_cost = replacement;
+        this.replacementCost = replacement;
     }
 
     public Film() {
@@ -68,12 +68,12 @@ public class Film {
 
     //Methods
 
-    public int getFilm_id() {
-        return film_id;
+    public int getFilmId() {
+        return filmId;
     }
 
-    public void setFilm_id(int film_id) {
-        this.film_id = film_id;
+    public void setFilmId(int film_id) {
+        this.filmId = film_id;
     }
 
     public String getTitle() {
@@ -92,12 +92,12 @@ public class Film {
         this.description = description;
     }
 
-    public int getLanguage_id() {
-        return language_id;
+    public int getLanguageId() {
+        return languageId;
     }
 
-    public void setLanguage_id(int language_id) {
-        this.language_id = language_id;
+    public void setLanguageId(int language_id) {
+        this.languageId = language_id;
     }
 
     public int getLength() {
@@ -108,12 +108,12 @@ public class Film {
         this.length = length;
     }
 
-    public double getRental_rate() {
-        return rental_rate;
+    public double getRentalRate() {
+        return rentalRate;
     }
 
-    public void setRental_rate(double rental_rate) {
-        this.rental_rate = rental_rate;
+    public void setRentalRate(double rental_rate) {
+        this.rentalRate = rental_rate;
     }
 
     public String getRating() {
@@ -123,11 +123,11 @@ public class Film {
     public void setRating(String rating) {
         this.rating = rating;
     }
-    public double getReplacement_cost() {
-        return replacement_cost;
+    public double getReplacementCost() {
+        return replacementCost;
     }
 
-    public void setReplacement_cost(double replacement_cost) {
-        this.replacement_cost = replacement_cost;
+    public void setReplacementCost(double replacement_cost) {
+        this.replacementCost = replacement_cost;
     }
 }

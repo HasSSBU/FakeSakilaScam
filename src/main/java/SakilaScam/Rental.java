@@ -10,7 +10,7 @@ public class Rental {
     @Id
     @Column(name = "rental_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int rental_id;
+    int rentalId;
 
     @ManyToOne
     @JoinColumn(name= "inventory_id")
@@ -20,40 +20,40 @@ public class Rental {
     private Set<Payment> payment;
 
     @Column(name = "rental_date")
-    String rental_date;
+    String rentalDate;
 
     @Column(name = "return_date")
-    String return_date;
+    String returnDate;
 
     public Rental(String rentDate, String returnDate){
-        this.rental_date = rentDate;
-        this.return_date = returnDate;
+        this.rentalDate = rentDate;
+        this.returnDate = returnDate;
     }
 
     public Rental(){
 
     }
 
-    public int getRental_id() {
-        return rental_id;
+    public int getRentalId() {
+        return rentalId;
     }
 
-    public void setRental_id(int rental_id) {
-        this.rental_id = rental_id;
+    public void setRentalId(int rentalId) {
+        this.rentalId = rentalId;
     }
-    public String getRental_date() {
-        return rental_date;
-    }
-
-    public void setRental_date(String rental_date) {
-        this.rental_date = rental_date;
+    public String getRentalDate() {
+        return rentalDate;
     }
 
-    public String getReturn_date() {
-        return return_date;
+    public void setRentalDate(String rental_date) {
+        this.rentalDate = rentalDate;
     }
 
-    public void setReturn_date(String return_date) {
-        this.return_date = return_date;
+    public String getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(String return_date) {
+        this.returnDate = returnDate;
     }
 }

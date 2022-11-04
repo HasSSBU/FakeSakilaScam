@@ -22,11 +22,11 @@ public class ActorTest {
 
     @Test
     public void testSetters(){
-        testActor.setActor_id(203);
+        testActor.setActorId(203);
         testActor.setFirstName("notFake");
         testActor.setLastName("lastName");
 
-        Assertions.assertEquals(203,testActor.getActor_id());
+        Assertions.assertEquals(203,testActor.getActorId());
         Assertions.assertEquals("notFake",testActor.getFirstName());
         Assertions.assertEquals("lastName",testActor.getLastName());
     }

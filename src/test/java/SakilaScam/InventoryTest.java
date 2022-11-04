@@ -10,8 +10,8 @@ public class InventoryTest {
 
     @Test
     public void TestAll(){
-        testInventory.setInventory_id(1);
-        Assertions.assertEquals(1, testInventory.getInventory_id());
+        testInventory.setInventoryId(1);
+        Assertions.assertEquals(1, testInventory.getInventoryId());
 
     }
 }

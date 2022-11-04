@@ -15,7 +15,7 @@ public class PaymentTest {
 
     @Test
     public void testGetters2(){
-        Assertions.assertEquals(0, paymentTest2.getFilm_id());
+        Assertions.assertEquals(0, paymentTest2.getFilmId());
         Assertions.assertEquals(0, paymentTest2.getAmount());
     }
 

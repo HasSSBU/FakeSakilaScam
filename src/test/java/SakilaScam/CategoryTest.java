@@ -16,15 +16,15 @@ public class CategoryTest {
     @Test
     public void testGetters2(){
         Assertions.assertNull(categoryTest2.getName());
-        Assertions.assertEquals(0, categoryTest2.getCategory_id());
+        Assertions.assertEquals(0, categoryTest2.getCategoryId());
     }
 
     @Test
     public void testSetters(){
         categoryTest.setName("Hehe");
-        categoryTest.setCategory_id(1);
+        categoryTest.setCategoryId(1);
 
         Assertions.assertEquals("Hehe", categoryTest.getName());
-        Assertions.assertEquals(1, categoryTest.getCategory_id());
+        Assertions.assertEquals(1, categoryTest.getCategoryId());
     }
 }

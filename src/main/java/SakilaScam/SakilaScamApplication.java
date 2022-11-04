@@ -111,7 +111,7 @@ public class SakilaScamApplication {
 	public @ResponseBody
 	double getCostOfFilm(@PathVariable(value="name") String name){
 		Film film = filmRepository.findByTitle(name);
-		return film.getRental_rate() + film.getReplacement_cost();
+		return film.getRentalRate() + film.getReplacementCost();
 	}
 
 }

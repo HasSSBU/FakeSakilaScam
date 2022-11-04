@@ -29,8 +29,8 @@ public class AddedCostStepDef {
     @Given("a user wants to find rent a film")
     public void a_user_wants_to_find_rent_a_film() {
         title = "BASIC EASY";
-        this.rent = testApp.filmRepository.findByTitle(title).getRental_rate();
-        this.replace = testApp.filmRepository.findByTitle(title).getReplacement_cost();
+        this.rent = testApp.filmRepository.findByTitle(title).getRentalRate();
+        this.replace = testApp.filmRepository.findByTitle(title).getReplacementCost();
 
     }
     @When("a user types purchases a film")
