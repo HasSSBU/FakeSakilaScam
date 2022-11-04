@@ -3,7 +3,7 @@ package sakila.scam;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PaymentModelTest {
+class PaymentModelTest {
 
     PaymentModel testPayment = new PaymentModel(20.99);
 

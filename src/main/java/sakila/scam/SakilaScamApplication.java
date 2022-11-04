@@ -37,7 +37,7 @@ public class SakilaScamApplication {
 		this.inventoryRepository = inventoryRepo;
 
 	}
-	public static void main(String[] args) {
+	public static void main() {
 		SpringApplication.run(SakilaScamApplication.class, args);
 	}
 
