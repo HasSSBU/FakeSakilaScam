@@ -1,4 +1,4 @@
-package SakilaScam;
+package sakila.scam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -89,10 +89,10 @@ public class SakilaScamApplication {
 	}
 
 	@DeleteMapping("/Delete/{id}")
-	public Map<String, Boolean> deleteActor(@PathVariable(value = "id") int actor_id)
+	public Map<String, Boolean> deleteActor(@PathVariable(value = "id") int actorId)
 			throws ResourceAccessException {
-		Actor actorHere = actorRepository.findById(actor_id)
-				.orElseThrow(() -> new ResourceAccessException("Employee not found for this id :: " + actor_id));
+		Actor actorHere = actorRepository.findById(actorId)
+				.orElseThrow(() -> new ResourceAccessException("Employee not found for this id :: " + actorId));
 
 		actorRepository.delete(actorHere);
 		Map<String, Boolean> response = new HashMap<>();

@@ -1,4 +1,4 @@
-package SakilaScam;
+package sakila.scam;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

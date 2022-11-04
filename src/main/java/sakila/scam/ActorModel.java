@@ -1,4 +1,4 @@
-package SakilaScam;
+package sakila.scam;
 
 public class ActorModel {
 

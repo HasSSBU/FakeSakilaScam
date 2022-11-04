@@ -1,4 +1,4 @@
-package SakilaScam;
+package sakila.scam;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

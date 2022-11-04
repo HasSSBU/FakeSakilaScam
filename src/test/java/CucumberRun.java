@@ -1,4 +1,4 @@
-import SakilaScam.SakilaScamApplication;
+import sakila.scam.SakilaScamApplication;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 

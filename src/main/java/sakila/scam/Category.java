@@ -1,4 +1,4 @@
-package SakilaScam;
+package sakila.scam;
 
 import javax.persistence.*;
 import java.util.Set;
