@@ -1,5 +1,5 @@
 
-import SakilaScam.*;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import sakila.scam.*;
