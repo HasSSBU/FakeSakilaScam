@@ -42,14 +42,6 @@ public class Customer {
         this.customer_id = customer_id;
     }
 
-    public Set<Payment> getPayment() {
-        return payment;
-    }
-
-    public void setPayment(Set<Payment> payment) {
-        this.payment = payment;
-    }
-
     public String getFirst_name() {
         return first_name;
     }

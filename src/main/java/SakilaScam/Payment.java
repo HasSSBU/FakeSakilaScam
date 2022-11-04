@@ -42,23 +42,4 @@ public class Payment {
         this.amount = amount;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setFilm_id(int film_id) {
-        this.film_id = film_id;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Rental getRental() {
-        return rental;
-    }
-
-    public void setRental(Rental rental) {
-        this.rental = rental;
-    }
 }

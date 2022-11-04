@@ -41,23 +41,6 @@ public class Rental {
     public void setRental_id(int rental_id) {
         this.rental_id = rental_id;
     }
-
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
-    }
-
-    public Set<Payment> getPayment() {
-        return payment;
-    }
-
-    public void setPayment(Set<Payment> payment) {
-        this.payment = payment;
-    }
-
     public String getRental_date() {
         return rental_date;
     }

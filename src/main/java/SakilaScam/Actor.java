@@ -63,10 +63,4 @@ public class Actor {
         this.last_name = last_name;
     }
 
-    public Set<Actor> getFilms() {
-        return films;
-    }
-    public void setFilms(Set<Actor> films) {
-        this.films = films;
-    }
 }

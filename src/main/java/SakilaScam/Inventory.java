@@ -31,14 +31,6 @@ public class Inventory {
         this.inventory_id = inventory_id;
     }
 
-    public Set<Rental> getRental() {
-        return rental;
-    }
-
-    public void setRental(Set<Rental> rental) {
-        this.rental = rental;
-    }
-
     public Film getFilm() {
         return film;
     }

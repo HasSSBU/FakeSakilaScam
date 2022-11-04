@@ -130,28 +130,4 @@ public class Film {
     public void setReplacement_cost(double replacement_cost) {
         this.replacement_cost = replacement_cost;
     }
-
-    public Set<Actor> getNames() {
-        return names;
-    }
-
-    public void setNames(Set<Actor> names) {
-        this.names = names;
-    }
-
-    public Set<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(Set<Category> categories) {
-        this.categories = categories;
-    }
-
-    public Set<Inventory> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory_id(Set<Inventory> inventory) {
-        this.inventory= inventory;
-    }
 }
