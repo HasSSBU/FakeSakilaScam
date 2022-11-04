@@ -38,7 +38,7 @@ public class Customer {
         return customerId;
     }
 
-    public void setCustomerId(int customer_id) {
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 
@@ -46,7 +46,7 @@ public class Customer {
         return firstName;
     }
 
-    public void setFirstName(String first_name) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -54,7 +54,7 @@ public class Customer {
         return lastName;
     }
 
-    public void setLastName(String last_name) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 

@@ -45,7 +45,7 @@ public class Rental {
         return rentalDate;
     }
 
-    public void setRentalDate(String rental_date) {
+    public void setRentalDate(String rentalDate) {
         this.rentalDate = rentalDate;
     }
 
@@ -53,7 +53,7 @@ public class Rental {
         return returnDate;
     }
 
-    public void setReturnDate(String return_date) {
+    public void setReturnDate(String returnDate) {
         this.returnDate = returnDate;
     }
 }
