@@ -79,8 +79,8 @@ public class SakilaScamApplication {
 
 	@PutMapping("/putActors/{id}")
 	public ResponseEntity<Actor> updateActor(@PathVariable(value="id") Integer id,
-											 @RequestBody Actor actorDetails) {
-
+											 @RequestBody ActorModel actorDetailModel) {
+		Actor actorDetails = new Actor(actorDetailModel.getFirst_name(), actorDetailModel.getLast_name());
 		Actor actor = actorRepository.findById(id)
 				.orElseThrow(() -> new ResourceAccessException("Actor ID not found : : " + id));
 

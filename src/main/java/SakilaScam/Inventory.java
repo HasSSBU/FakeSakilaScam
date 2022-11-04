@@ -31,11 +31,4 @@ public class Inventory {
         this.inventory_id = inventory_id;
     }
 
-    public Film getFilm() {
-        return film;
-    }
-
-    public void setFilm(Film film) {
-        this.film = film;
-    }
 }
