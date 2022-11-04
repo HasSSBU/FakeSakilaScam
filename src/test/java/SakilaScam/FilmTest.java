@@ -3,13 +3,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-public class FilmTest {
+class FilmTest {
 
     Film testFilm = new Film("testTitle", "testDes", 1, 50, 1, "testRate", 20.0);
     Film testFilm2 = new Film();
 
     @Test
-    public void testGetters(){
+    void testGetters(){
         Assertions.assertEquals("testTitle",testFilm.getTitle());
         Assertions.assertEquals("testDes",testFilm.getDescription());
         Assertions.assertEquals(1,testFilm.getLanguageId());
@@ -20,7 +20,7 @@ public class FilmTest {
     }
 
     @Test
-    public void testGetters2(){
+    void testGetters2(){
         Assertions.assertEquals(0, testFilm2.getFilmId());
         Assertions.assertNull(testFilm2.getTitle());
         Assertions.assertNull(testFilm2.getDescription());
@@ -31,7 +31,7 @@ public class FilmTest {
         Assertions.assertEquals(0, testFilm2.getReplacementCost());
     }
     @Test
-    public void testSetters(){
+    void testSetters(){
         testFilm.setFilmId(203);
         testFilm.setTitle("testTitle1");
         testFilm.setDescription("testDes1");

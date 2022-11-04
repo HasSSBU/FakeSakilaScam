@@ -2,20 +2,20 @@ package SakilaScam;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-public class CustomerTest {
+class CustomerTest {
 
     Customer testCustomer = new Customer("Hugh", "Jazz", "HughJazz@JennaTools.com");
     Customer testCustomer2 = new Customer();
 
     @Test
-    public void testGetters(){
+    void testGetters(){
         Assertions.assertEquals("Hugh", testCustomer.getFirstName());
         Assertions.assertEquals("Jazz", testCustomer.getLastName());
         Assertions.assertEquals("HughJazz@JennaTools.com", testCustomer.getEmail());
     }
 
     @Test
-    public  void testGetters2(){
+    void testGetters2(){
         Assertions.assertEquals(0, testCustomer2.getCustomerId());
         Assertions.assertNull(testCustomer2.getFirstName());
         Assertions.assertNull(testCustomer2.getLastName());
@@ -23,7 +23,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void testSetters(){
+    void testSetters(){
         testCustomer.setCustomerId(1);
         testCustomer.setFirstName("Boo");
         testCustomer.setLastName("Khaki");

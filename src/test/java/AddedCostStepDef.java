@@ -15,7 +15,7 @@ public class AddedCostStepDef {
     FilmRepository filmRepo;
     CategoryRepository categoryRepo;
     @Autowired
-    Payment_Repository paymentRepo;
+    PaymentRepository paymentRepo;
     @Autowired
     CustomerRepository customerRepo;
     @Autowired

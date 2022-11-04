@@ -18,13 +18,13 @@ import java.util.Optional;
 public class SakilaScamApplication {
 
 	@Autowired
-	public ActorRepository actorRepository;
-	public FilmRepository filmRepository;
-	public CategoryRepository categoryRepository;
-	public Payment_Repository paymentRepository;
-	public CustomerRepository customerRepository;
+	public final ActorRepository actorRepository;
+	public final FilmRepository filmRepository;
+	public final CategoryRepository categoryRepository;
+	public final PaymentRepository paymentRepository;
+	public final CustomerRepository customerRepository;
 
-	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo, Payment_Repository paymentReop, CustomerRepository customerRepo){
+	public SakilaScamApplication(ActorRepository actorRepo, FilmRepository filmRepo, CategoryRepository categoryRepo, PaymentRepository paymentReop, CustomerRepository customerRepo){
 		this.actorRepository = actorRepo;
 		this.filmRepository = filmRepo;
 		this.categoryRepository = categoryRepo;
@@ -79,7 +79,7 @@ public class SakilaScamApplication {
 	@PutMapping("/putActors/{id}")
 	public Actor updateActor(@PathVariable(value="id") Integer id,
 											 @RequestBody ActorModel actorModelDetails) {
-		Actor actorDetails = new Actor(actorModelDetails.getFirst_name(), actorModelDetails.getLast_name());
+		Actor actorDetails = new Actor(actorModelDetails.getFirstName(), actorModelDetails.getLastName());
 		Actor actor = actorRepository.findById(id)
 				.orElseThrow(() -> new ResourceAccessException("Actor ID not found : : " + id));
 
@@ -102,7 +102,7 @@ public class SakilaScamApplication {
 
 	@PostMapping("/Actor")
 	public Actor createActor(@RequestBody ActorModel newActorModel) {
-		Actor newActor = new Actor(newActorModel.getFirst_name(), newActorModel.getLast_name());
+		Actor newActor = new Actor(newActorModel.getFirstName(), newActorModel.getLastName());
 		return actorRepository.save(newActor);
 	}
 

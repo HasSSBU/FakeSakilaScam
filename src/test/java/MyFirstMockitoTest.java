@@ -2,20 +2,17 @@
 import SakilaScam.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
-import org.springframework.http.ResponseEntity;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class MyFirstMockitoTest {
+class MyFirstMockitoTest {
 
     ActorRepository actorRepository = mock(ActorRepository.class);
     FilmRepository filmRepository = mock(FilmRepository.class);
     CategoryRepository categoryRepository = mock(CategoryRepository.class);
-    Payment_Repository paymentRepository = mock(Payment_Repository.class);
+    PaymentRepository paymentRepository = mock(PaymentRepository.class);
     CustomerRepository customerRepository = mock(CustomerRepository.class);
 
     SakilaScamApplication testApp= new SakilaScamApplication(actorRepository, filmRepository, categoryRepository, paymentRepository,  customerRepository);
@@ -93,7 +90,7 @@ public class MyFirstMockitoTest {
     void testPutMapActor(){
         testActor2.setActorId(2);
         ActorModel actorToUpdate = new ActorModel("John","Cena");
-        Actor actorUpdate = new Actor(actorToUpdate.getFirst_name(),actorToUpdate.getLast_name());
+        Actor actorUpdate = new Actor(actorToUpdate.getFirstName(),actorToUpdate.getLastName());
         when(actorRepository.save(any(Actor.class))).thenReturn(actorUpdate);
         when(actorRepository.findById(2)).thenReturn(Optional.ofNullable(testActor2));
         Actor updated = testApp.updateActor(2, actorToUpdate);
@@ -112,7 +109,7 @@ public class MyFirstMockitoTest {
     @Test
     void testPostMap(){
         ActorModel actorModelUpdate = new ActorModel("The Rock", "Johnson");
-        Actor actorUpdate = new Actor(actorModelUpdate.getFirst_name(), actorModelUpdate.getLast_name());
+        Actor actorUpdate = new Actor(actorModelUpdate.getFirstName(), actorModelUpdate.getLastName());
         when(actorRepository.save(any(Actor.class))).thenReturn(actorUpdate);
         when(actorRepository.getReferenceById(3)).thenReturn(actorUpdate);
         testApp.createActor(actorModelUpdate);

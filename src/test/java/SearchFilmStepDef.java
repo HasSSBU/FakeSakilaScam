@@ -19,7 +19,7 @@ public class SearchFilmStepDef{
     @Autowired
     CategoryRepository categoryRepo;
     @Autowired
-    Payment_Repository paymentRepo;
+    PaymentRepository paymentRepo;
     @Autowired
     CustomerRepository customerRepo;
     @Autowired
@@ -39,7 +39,7 @@ public class SearchFilmStepDef{
     }
     @Then("they see the details of the film")
     public void they_see_the_details_of_the_film() {
-        Assertions.assertEquals(this.result, "ACE GOLDFINGER");
+        Assertions.assertEquals("ACE GOLDFINGER", this.result);
 
     }
 }

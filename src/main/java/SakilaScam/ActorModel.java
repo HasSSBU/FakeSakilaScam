@@ -2,20 +2,20 @@ package SakilaScam;
 
 public class ActorModel {
 
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
 
     public ActorModel(String fName, String lName){
-        this.first_name = fName;
-        this.last_name = lName;
+        this.firstName = fName;
+        this.lastName = lName;
 
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 }

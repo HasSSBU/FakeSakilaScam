@@ -72,8 +72,8 @@ public class Film {
         return filmId;
     }
 
-    public void setFilmId(int film_id) {
-        this.filmId = film_id;
+    public void setFilmId(int filmId) {
+        this.filmId = filmId;
     }
 
     public String getTitle() {
@@ -96,8 +96,8 @@ public class Film {
         return languageId;
     }
 
-    public void setLanguageId(int language_id) {
-        this.languageId = language_id;
+    public void setLanguageId(int languageId) {
+        this.languageId = languageId;
     }
 
     public int getLength() {
@@ -112,8 +112,8 @@ public class Film {
         return rentalRate;
     }
 
-    public void setRentalRate(double rental_rate) {
-        this.rentalRate = rental_rate;
+    public void setRentalRate(double rentalRate) {
+        this.rentalRate = rentalRate;
     }
 
     public String getRating() {
@@ -127,7 +127,7 @@ public class Film {
         return replacementCost;
     }
 
-    public void setReplacementCost(double replacement_cost) {
-        this.replacementCost = replacement_cost;
+    public void setReplacementCost(double replacementCost) {
+        this.replacementCost = replacementCost;
     }
 }

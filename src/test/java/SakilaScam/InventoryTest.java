@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-public class InventoryTest {
+class InventoryTest {
 
-    public Inventory testInventory = new Inventory();
+    Inventory testInventory = new Inventory();
 
     @Test
-    public void TestAll(){
+    void TestAll(){
         testInventory.setInventoryId(1);
         Assertions.assertEquals(1, testInventory.getInventoryId());
 

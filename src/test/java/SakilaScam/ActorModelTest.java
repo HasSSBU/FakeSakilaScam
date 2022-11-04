@@ -9,7 +9,7 @@ class ActorModelTest {
 
     @Test
     void testGetters() {
-        Assertions.assertEquals("Fake",testActor.getFirst_name());
-        Assertions.assertEquals("Name",testActor.getLast_name());
+        Assertions.assertEquals("Fake",testActor.getFirstName());
+        Assertions.assertEquals("Name",testActor.getLastName());
     }
 }
