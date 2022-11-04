@@ -109,7 +109,7 @@ public class SakilaScamApplication {
 	}
 
 	@DeleteMapping("/Delete/{id}")
-	public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") int actor_id)
+	public Map<String, Boolean> deleteActor(@PathVariable(value = "id") int actor_id)
 			throws ResourceAccessException {
 		Actor actorHere = actorRepository.findById(actor_id)
 				.orElseThrow(() -> new ResourceAccessException("Employee not found for this id :: " + actor_id));

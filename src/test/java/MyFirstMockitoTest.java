@@ -5,9 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -100,5 +98,24 @@ public class MyFirstMockitoTest {
         when(actorRepository.findById(2)).thenReturn(Optional.ofNullable(testActor2));
         Actor updated = testApp.updateActor(2, actorToUpdate);
         Assertions.assertEquals(updated, actorUpdate);
+    }
+
+    @Test
+    void testDeleteActor(){
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        when(actorRepository.findById(2)).thenReturn(Optional.ofNullable(testActor2));
+        Map<String, Boolean> result = testApp.deleteActor(2);
+        Assertions.assertEquals(result,response);
+    }
+
+    @Test
+    void testPostMap(){
+        ActorModel actorModelUpdate = new ActorModel("The Rock", "Johnson");
+        Actor actorUpdate = new Actor(actorModelUpdate.getFirst_name(), actorModelUpdate.getLast_name());
+        when(actorRepository.save(any(Actor.class))).thenReturn(actorUpdate);
+        when(actorRepository.getReferenceById(3)).thenReturn(actorUpdate);
+        testApp.createActor(actorModelUpdate);
+        Assertions.assertEquals(actorUpdate, testApp.actorRepository.getReferenceById(3));
     }
 }
