@@ -3,9 +3,11 @@ import SakilaScam.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
+import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -37,7 +39,8 @@ public class MyFirstMockitoTest {
     List<Category> allCategories = Arrays.asList(testCategory1,testCategory2);
     List<Customer> allCustomers = Arrays.asList(testCustomer1,testCustomer2);
     List<Payment> allPayments = Arrays.asList(paymentTest1,paymentTest2);
-    Film searchedFilm = testFilm1;
+
+
 
     @Test
     public void GetMapTestFilms(){
@@ -77,5 +80,24 @@ public class MyFirstMockitoTest {
         when(filmRepository.findByTitle("My Film")).thenReturn(testFilm1);
         String result = testApp.getFilmByName("My Film");
         Assertions.assertEquals(testFilm1.getTitle(), result);
+    }
+
+    @Test
+    public void testGetMapFilmById(){
+        testFilm2.setFilm_id(1);
+        Optional<Film> searchedFilmId = Optional.of(testFilm2);
+        when(filmRepository.findById(1)).thenReturn(searchedFilmId);
+        Optional<Film> result = testApp.getFilm(1);
+        Assertions.assertEquals(searchedFilmId, result);
+    }
+
+    @Test
+    public void testPutMapActor(){
+        testActor2.setActor_id(2);
+        Actor actorToUpdate = new Actor("John","Cena");
+        when(actorRepository.save(any(Actor.class))).thenReturn(actorToUpdate);
+        when(actorRepository.findById(2)).thenReturn(Optional.ofNullable(testActor2));
+        Actor updated = testApp.updateActor(2, actorToUpdate);
+        Assertions.assertEquals(updated, actorToUpdate);
     }
 }

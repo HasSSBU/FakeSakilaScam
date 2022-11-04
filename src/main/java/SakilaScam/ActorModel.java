@@ -8,6 +8,7 @@ public class ActorModel {
     public ActorModel(String fName, String lName){
         this.first_name = fName;
         this.last_name = lName;
+
     }
 
     public String getFirst_name() {

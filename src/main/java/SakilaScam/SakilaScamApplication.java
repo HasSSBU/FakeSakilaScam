@@ -78,16 +78,14 @@ public class SakilaScamApplication {
 	}
 
 	@PutMapping("/putActors/{id}")
-	public ResponseEntity<Actor> updateActor(@PathVariable(value="id") Integer id,
-											 @RequestBody ActorModel actorDetailModel) {
-		Actor actorDetails = new Actor(actorDetailModel.getFirst_name(), actorDetailModel.getLast_name());
+	public Actor updateActor(@PathVariable(value="id") Integer id,
+											 @RequestBody Actor actorDetails) {
 		Actor actor = actorRepository.findById(id)
 				.orElseThrow(() -> new ResourceAccessException("Actor ID not found : : " + id));
 
 		actor.setFirstName(actorDetails.getFirstName());
 		actor.setLastName(actorDetails.getLastName());
-		final Actor updatedActor = actorRepository.save(actor);
-		return ResponseEntity.ok(updatedActor);
+		return actorRepository.save(actor);
 	}
 
 	@DeleteMapping("/Delete/{id}")
