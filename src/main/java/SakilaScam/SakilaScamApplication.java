@@ -15,7 +15,7 @@ import java.util.Optional;
 @SpringBootApplication
 @RestController
 @RequestMapping("/Home")
-@CrossOrigin
+@CrossOrigin("http://localhost:8080")
 public class SakilaScamApplication {
 
 	@Autowired
@@ -103,7 +103,8 @@ public class SakilaScamApplication {
 	}
 
 	@PostMapping("/Actor")
-	public Actor createActor(@RequestBody Actor newActor) {
+	public Actor createActor(@RequestBody ActorModel newActorModel) {
+		Actor newActor = new Actor(newActorModel.getFirst_name(), newActorModel.getLast_name());
 		return actorRepository.save(newActor);
 	}
 

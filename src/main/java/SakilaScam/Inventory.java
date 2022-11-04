@@ -20,7 +20,6 @@ public class Inventory {
     private Film film;
 
     public Inventory(){
-
     }
 
     public int getInventory_id() {
