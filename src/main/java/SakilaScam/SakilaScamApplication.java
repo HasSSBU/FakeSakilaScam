@@ -35,26 +35,6 @@ public class SakilaScamApplication {
 		SpringApplication.run(SakilaScamApplication.class, args);
 	}
 
-	public ActorRepository getActorRepository() {
-		return actorRepository;
-	}
-
-	public FilmRepository getFilmRepository() {
-		return filmRepository;
-	}
-
-	public CategoryRepository getCategoryRepository() {
-		return categoryRepository;
-	}
-
-	public Payment_Repository getPaymentRepository() {
-		return paymentRepository;
-	}
-
-	public CustomerRepository getCustomerRepository() {
-		return customerRepository;
-	}
-
 	@GetMapping("/allActors")
 	public @ResponseBody
 	Iterable<Actor> getAllActors(){
