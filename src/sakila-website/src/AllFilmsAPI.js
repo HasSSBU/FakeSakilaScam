@@ -36,7 +36,8 @@ function GetAllFilms(){
             <div>Films
                 
                 <div id="Films">{films !== [] ? LoadFilms() : null}</div>
-                <br></br>
+                <hr></hr>
+                <div>NOTE you will be charged rent by the minuite</div>
             </div>
         )
     }
