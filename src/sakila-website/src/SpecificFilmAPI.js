@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 
-function GetAllFilms(){
+function GetFilm(){
     const [error, setError] = useState(null);
     const [films, setFilms] = useState("");
 
@@ -30,4 +30,4 @@ function GetAllFilms(){
     }
 }
 
-export default GetAllFilms;
+export default GetFilm;
