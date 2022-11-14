@@ -6,10 +6,10 @@ function GetFilm(){
     const [films, setFilms] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:8080/Home/allFilms")
+        fetch("http://localhost:8080/Home/FilmName/2")
         .then(res => res.json())
-        .then(FilmList =>{
-            setFilms(FilmList[0].title);
+        .then(Film =>{
+            setFilms(Film.title);
         },
         error => {
             setError(error);

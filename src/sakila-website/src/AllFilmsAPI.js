@@ -3,13 +3,24 @@ import {useState} from 'react';
 
 function GetAllFilms(){
     const [error, setError] = useState(null);
-    const [films, setFilms] = useState("");
+    const [films, setFilms] = useState([]);
+    
+    function LoadFilms(){
+        const pageContent = [];
+        films.forEach(element => {
+            pageContent.push(<div>{element.title}: {element.rentalRate} <button>Rent</button></div>,
+                    <p>{element.description}</p>)
+        });
+        return(
+            pageContent
+        );
+    }
 
     useEffect(() => {
         fetch("http://localhost:8080/Home/allFilms")
         .then(res => res.json())
-        .then(FilmList =>{
-            setFilms(FilmList[0].title);
+        .then(FilmList =>{      
+            setFilms(FilmList);
         },
         error => {
             setError(error);
@@ -23,11 +34,13 @@ function GetAllFilms(){
     }else{
         return(
             <div>Films
+                
+                <div id="Films">{films !== [] ? LoadFilms() : null}</div>
                 <br></br>
-                <div id="Films">{films}</div>
             </div>
         )
     }
 }
+
 
 export default GetAllFilms;
