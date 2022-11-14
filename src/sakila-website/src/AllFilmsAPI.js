@@ -8,8 +8,8 @@ function GetAllFilms(){
     useEffect(() => {
         fetch("http://localhost:8080/Home/allFilms")
         .then(res => res.json())
-        .then(Actors =>{
-            setFilms(Actors[0].title);
+        .then(FilmList =>{
+            setFilms(FilmList[0].title);
             console.log({Actors});
         },
         error => {
