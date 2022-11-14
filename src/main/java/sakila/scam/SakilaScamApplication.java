@@ -14,7 +14,7 @@ import java.util.Optional;
 @SpringBootApplication
 @RestController
 @RequestMapping("/Home")
-@CrossOrigin("http://localhost:8080")
+@CrossOrigin(origins ={"http://localhost:8080","http://localhost:3000"})
 public class SakilaScamApplication {
 
 	@Autowired
@@ -58,11 +58,15 @@ public class SakilaScamApplication {
 	List<Category> getAllCategories(){
 		return categoryRepository.findAll();
 	}
+
+
 	@GetMapping("/allPayments")
 	public @ResponseBody
 	List<Payment> getAllPayments(){
 		return paymentRepository.findAll();
 	}
+
+
 	@GetMapping("/allCustomers")
 	public @ResponseBody
 	List<Customer> getAllCustomers(){
