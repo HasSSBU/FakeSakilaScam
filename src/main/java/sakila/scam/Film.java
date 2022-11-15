@@ -68,6 +68,15 @@ public class Film {
 
     //Methods
 
+    public Set<Actor> getActorIds(){
+        return names;
+    }
+    public  Set<Category> getCategories(){
+        return categories;
+    }
+    public  Set<Inventory> getInventory(){
+        return inventory;
+    }
     public int getFilmId() {
         return filmId;
     }
