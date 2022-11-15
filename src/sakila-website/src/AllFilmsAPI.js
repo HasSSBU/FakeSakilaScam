@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 function GetAllFilms(){
     const [error, setError] = useState(null);
@@ -8,8 +9,12 @@ function GetAllFilms(){
     function LoadFilms(){
         const pageContent = [];
         films.forEach(element => {
-            pageContent.push(<div>{element.title}: {element.rentalRate} <button>Rent</button></div>,
-                    <p>{element.description}</p>)
+            pageContent.push(
+            <><div>
+                    {element.title}: {element.rentalRate}
+                    <Link to={"/FilmPage/" + element.filmId}>
+                        <button>Rent</button></Link>
+                </div><p>{element.description}</p></>)
         });
         return(
             pageContent

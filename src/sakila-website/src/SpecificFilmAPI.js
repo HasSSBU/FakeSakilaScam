@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 
-function GetFilm(){
+function GetFilm(props){
+    var reference = "http://localhost:8080/Home/Film/" + props.Id;
     const [error, setError] = useState(null);
-    const [films, setFilms] = useState("");
+    const [title, setTitle] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:8080/Home/FilmName/2")
+        fetch(reference)
         .then(res => res.json())
         .then(Film =>{
-            setFilms(Film.title);
+            setTitle(Film.title);
         },
         error => {
             setError(error);
@@ -22,9 +23,8 @@ function GetFilm(){
         )
     }else{
         return(
-            <div>Films
-                <br></br>
-                <div id="Films">{films}</div>
+            <div>
+                <div id="Films">{title}</div>
             </div>
         )
     }

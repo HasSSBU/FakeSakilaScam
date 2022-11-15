@@ -6,7 +6,8 @@ import Home from "./pages/Home";
 import FilmPage from "./pages/FilmPage";
 import PaymentPage from "./pages/PaymentPage";
 import NavBar from './NavBar';
-import Head from './homepage.js';
+
+
 
 export default function App(){
   return(
@@ -14,7 +15,7 @@ export default function App(){
       <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home/>}/>
-        <Route path="FilmPage" element={<FilmPage/>}/>
+        <Route path="FilmPage/:Id" element={<FilmPage/>}/>
         <Route path="PaymentPage" element={<PaymentPage/>}/>
       </Route>
       </Routes>
@@ -28,7 +29,7 @@ export default function App(){
 // import Head from './homepage.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<div><Head/><App/></div>);
+root.render(<div><App/></div>);
 //   <React.StrictMode>
 //     <Head/>
 //     <GetAllFilms/>

@@ -1,20 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
+import logo from './logo.png';
+import GetFilm from './SpecificFilmAPI';
+
 
 const NavBar = () => {
+    
     return(
         <nav>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/FilmPage">FilmPage</Link>
-                </li>
-                <li>
-                    <Link to="/PaymentPage">PaymentPage</Link>
-                </li>
-            </ul>
+            <Link to="/"><img src = {logo} /></Link>
+            <div>
+            
+                <i>         Rent Fantastic Films!</i>
+                <hr></hr>
+            </div>
+                
+            <Link to="/PaymentPage">PaymentPage</Link>
+             
         </nav>
     );
 }
