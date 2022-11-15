@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.png';
+import Logo from './logo.png';
 
 
 function Head (){
     return(
         <div>
-            <img src = {logo} />
+            <img src = {Logo} />
             <i>         Rent Fantastic Films!</i>
             <hr></hr>
         </div>

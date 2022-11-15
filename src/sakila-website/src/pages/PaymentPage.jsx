@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import GetFilmForPayment from '../FilmPayment.js';
 
 function PaymentPage(){
-    let param = useParams();
+    let Param = useParams();
     return(
         <div>
-            <GetFilmForPayment Id={param.Id}/> 
+            <GetFilmForPayment Id={Param.Id}/> 
         </div>
     );
 }

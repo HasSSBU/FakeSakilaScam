@@ -3,21 +3,21 @@ import {useState} from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 function GetAllFilms(){
-    const [error, setError] = useState(null);
-    const [films, setFilms] = useState([]);
+    const [Error, SetError] = useState(null);
+    const [Films, SetFilms] = useState([]);
     
     function LoadFilms(){
-        const pageContent = [];
-        films.forEach(element => {
-            pageContent.push(
+        const PageContent = [];
+        Films.forEach(Element => {
+            PageContent.push(
             <><div>
-                    {element.title}: {element.rentalRate}
-                    <Link to={"/FilmPage/" + element.filmId}>
+                    {Element.title}: {Element.rentalRate}
+                    <Link to={"/FilmPage/" + Element.filmId}>
                         <button>Rent</button></Link>
-                </div><p>{element.description}</p></>)
+                </div><p>{Element.description}</p></>)
         });
         return(
-            pageContent
+            PageContent
         );
     }
 
@@ -25,14 +25,14 @@ function GetAllFilms(){
         fetch("http://localhost:8080/Home/allFilms")
         .then(res => res.json())
         .then(FilmList =>{      
-            setFilms(FilmList);
+            SetFilms(FilmList);
         },
-        error => {
-            setError(error);
+        Error => {
+            SetError(Error);
         }
         )
     },[])
-    if(error){
+    if(Error){
         return(
             <div>Could not load API, null values Found</div>
         )
@@ -40,7 +40,7 @@ function GetAllFilms(){
         return(
             <div>Films
                 
-                <div id="Films">{films !== [] ? LoadFilms() : null}</div>
+                <div id="Films">{Films !== [] ? LoadFilms() : null}</div>
                 <hr></hr>
                 <div>NOTE you will be charged rent by the minuite</div>
             </div>

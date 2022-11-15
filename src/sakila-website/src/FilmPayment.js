@@ -3,35 +3,35 @@ import {useState} from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 function GetFilmForPayment(props){
-    var reference = "http://localhost:8080/Home/Film/" + props.Id;
-    const [error, setError] = useState(null);
-    const [title, setTitle] = useState("");
-    const [rentRate, setRentRate] = useState("");
-    const [rating, setRating] = useState("");
+    var Reference = "http://localhost:8080/Home/Film/" + props.Id;
+    const [Error, SetError] = useState(null);
+    const [Title, SetTitle] = useState("");
+    const [RentRate, SetRentRate] = useState("");
+    const [Rating, SetRating] = useState("");
 
     useEffect(() => {
-        fetch(reference)
-        .then(res => res.json())
+        fetch(Reference)
+        .then(Res => Res.json())
         .then(Film =>{
-            setTitle(Film.title);
-            setRentRate(Film.rentalRate);
-            setRating(Film.rating);
+            SetTitle(Film.title);
+            SetRentRate(Film.rentalRate);
+            SetRating(Film.rating);
         },
-        error => {
-            setError(error);
+        Error => {
+            SetError(Error);
         }
         )
     },[])
-    if(error){
+    if(Error){
         return(
             <div>Could not load API, null values Found</div>
         )
     }else{
         return(
             <div>
-                <div id="title">{title}</div>
-                <div id="rentRate">{rentRate}</div>
-                <div id="rating">{rating}</div>
+                <div id="title">{Title}</div>
+                <div id="rentRate">{RentRate}</div>
+                <div id="rating">{Rating}</div>
                 <form>
 
                     <button>Confrim Payment</button>
