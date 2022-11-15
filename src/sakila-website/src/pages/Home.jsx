@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import GetAllFilms from '../AllFilmsAPI.js';
 
 function Home(){
