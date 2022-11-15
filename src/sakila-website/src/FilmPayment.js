@@ -32,11 +32,26 @@ function GetFilmForPayment(props){
                 <div id="title">{Title}</div>
                 <div id="rentRate">{RentRate}</div>
                 <div id="rating">{Rating}</div>
-                <form>
-
-                    <button>Confrim Payment</button>
+                <form >
+                    <label>
+                        How long would you like to rent this film?
+                        <input type='text'/>
+                        <br></br>
+                        Card Number: 
+                        <input type="text"/>
+                        <br></br>
+                        Expiry Month: 
+                        <input type="text" />
+                        <br></br>
+                        Expiry Year: 
+                        <input type="text" />
+                        <br></br>            
+                        Security Code: 
+                        <input type="text" />
+                    </label>
+                    <br></br>
+                    <Link to={"/EndPage/"}><input type="submit" value="Submit" /> </Link>
                 </form>
-                
             </div>
         )
     }
