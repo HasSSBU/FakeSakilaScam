@@ -5,6 +5,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import FilmPage from "./pages/FilmPage";
 import PaymentPage from "./pages/PaymentPage";
+import EndPage from './pages/EndPage';
 import NavBar from './NavBar';
 
 
@@ -17,6 +18,7 @@ export default function App(){
         <Route index element={<Home/>}/>
         <Route path="FilmPage/:Id" element={<FilmPage/>}/>
         <Route path="PaymentPage/:Id" element={<PaymentPage/>}/>
+        <Route path="EndPage/" element={<EndPage/>}/>
       </Route>
       </Routes>
     </BrowserRouter>

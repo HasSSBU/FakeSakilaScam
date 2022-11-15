@@ -12,6 +12,8 @@ const NavBar = () => {
             
                 <i>         Rent Fantastic Films!</i>
                 <hr></hr>
+
+                <Link to="EndPage/"> <p>click me</p></Link>
             </div>            
         </nav>
     );
