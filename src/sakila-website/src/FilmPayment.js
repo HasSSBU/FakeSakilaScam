@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 import { BrowserRouter, Route, Link, useNavigate } from 'react-router-dom';
+import './index.css';
 
 function GetFilmForPayment(Props){
     var Reference = "https://sakilascam-1668596780924.azurewebsites.net//Home/Film/" + Props.Id;

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
+import './index.css';
 
 function GetFilm(props){
     var Reference = "https://sakilascam-1668596780924.azurewebsites.net//Home/Film/" + props.Id;
@@ -19,7 +20,7 @@ function GetFilm(props){
         Actors.forEach(Element => {
             ActorContent.push(
             <><div>
-                {Element.firstName} {Element.lastName}   
+                {Element.firstName} {Element.lastName},   
             </div></>)
         });
         return(

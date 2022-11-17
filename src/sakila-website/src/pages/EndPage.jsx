@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import ScamBody from '../ScamReveal';
+import '../index.css';
 
 function EndPage(){
     let Param = useParams();

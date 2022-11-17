@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
+import './index.css';
 
 function GetAllFilms(){
     const [Error, SetError] = useState(null);
@@ -10,11 +11,14 @@ function GetAllFilms(){
         const PageContent = [];
         Films.forEach(Element => {
             PageContent.push(
-            <><div>
+            <><div id='FilmData'>
                     {Element.title}: {Element.rentalRate}
                     <Link to={"/FilmPage/" + Element.filmId}>
-                        <button>Rent</button></Link>
-                </div><p>{Element.description}</p></>)
+                        <button id='RentButton'>Rent</button></Link>
+                </div><p>{Element.description}</p>
+                <hr></hr>
+            </>
+            )
         });
         return(
             PageContent
@@ -38,11 +42,12 @@ function GetAllFilms(){
         )
     }else{
         return(
-            <div>Films
+            <div>Our Films
+                <hr></hr>
                 
                 <div id="Films">{Films !== [] ? LoadFilms() : null}</div>
                 <hr></hr>
-                <div>NOTE you will be charged rent by the minuite</div>
+                <div>NOTE you will be charged rent by the minute</div>
             </div>
         )
     }

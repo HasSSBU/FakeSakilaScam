@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Logo from './logo.png';
+import './index.css';
 
 
 const NavBar = () => {
@@ -10,10 +11,10 @@ const NavBar = () => {
             <Link to="/"><img src = {Logo} /></Link>
             <div>
             
-                <i>         Rent Fantastic Films!</i>
-                <Link to={"/ExtraPage/"}>
+                <p id='subtitle'>Rent Fantastic Films!</p>
+                {/* <Link to={"/ExtraPage/"}>
                     <div>Test Addtional API calls here</div>
-                </Link>
+                </Link> */}
                 <hr></hr>
             </div>            
         </nav>

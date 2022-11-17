@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import {useState} from 'react';
+import './index.css';
 
 function ScamBody(Props){
     var Reference = "https://sakilascam-1668596780924.azurewebsites.net//Home/Film/" + Props.Id;

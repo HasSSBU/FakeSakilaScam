@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(255, 216, 157);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#subtitle{
+    position: absolute;
+    transform: translate(250px,-50px);
+    font-style: italic;
+    
+}
+#RentButton{
+    margin:0 auto;
+    display:block;
+    
+}
+#FilmData{
+    font-weight: bold;
+}
+#title{
+    font-weight: bold;
+}

@@ -86,6 +86,12 @@ public class SakilaScamApplication {
 		return film.getTitle();
 	}
 
+    @GetMapping("/Actor/{id}")
+    public @ResponseBody
+    Optional<Actor> getActor(@PathVariable(value="id") Integer id){
+        return actorRepository.findById(id);
+    }
+
 	@PutMapping("/putActors/{id}")
 	public Actor updateActor(@PathVariable(value="id") Integer id,
 											 @RequestBody ActorModel actorModelDetails) {
