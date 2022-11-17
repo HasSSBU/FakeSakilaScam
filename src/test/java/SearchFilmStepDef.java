@@ -1,11 +1,10 @@
 import java.lang.*;
-
+import sakila.scam.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
-import sakila.scam.*;
 
 
 public class SearchFilmStepDef{
