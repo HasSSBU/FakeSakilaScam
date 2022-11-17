@@ -3,7 +3,7 @@ import {useState} from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 function GetFilm(props){
-    var Reference = "http://localhost:8080/Home/Film/" + props.Id;
+    var Reference = "https://sakilascam-1668596780924.azurewebsites.net//Home/Film/" + props.Id;
     const [Error, SetError] = useState(null);
     const [Id, SetId] = useState("");
     const [Title, SetTitle] = useState("");
@@ -66,12 +66,13 @@ function GetFilm(props){
     }else{
         return(
             <div>
-                <div id="title">{Title}</div>
+                <div id="title">Title: {Title}</div>
                 <div id="desc">{Desc}</div>
-                <div id="rentRate">{RentRate}</div>
-                <div id="rating">{Rating}</div>
+                <div id="rentRate">Rental Cost: {RentRate}</div>
+                <div id="rating">Rating: {Rating}</div>
+                <div>Actors:</div>
                 <div>{Actors !== [] ? LoadActors() : null}</div>
-                <div>{Actors !== [] ? LoadCategories() : null}</div>
+                <div>Categories: {Actors !== [] ? LoadCategories() : null}</div>
                 <Link to={"/PaymentPage/" + Id}>
                     <button>Rent Me!</button>
                 </Link>

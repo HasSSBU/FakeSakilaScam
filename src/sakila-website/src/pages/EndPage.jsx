@@ -1,10 +1,15 @@
 import React from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import ScamBody from '../ScamReveal';
 
 function EndPage(){
+    let Param = useParams();
+    let Location = useLocation();
+    let Input = Location.state;
+    console.log(Input);
     return(
         <div>
-            <ScamBody/>
+            <ScamBody  Id={Param.Id} Input={Input}/>
         </div>
     );
 }

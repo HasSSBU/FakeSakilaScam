@@ -11,6 +11,9 @@ const NavBar = () => {
             <div>
             
                 <i>         Rent Fantastic Films!</i>
+                <Link to={"/ExtraPage/"}>
+                    <div>Test Addtional API calls here</div>
+                </Link>
                 <hr></hr>
             </div>            
         </nav>

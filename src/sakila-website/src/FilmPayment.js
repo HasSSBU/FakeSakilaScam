@@ -1,27 +1,50 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, useNavigate } from 'react-router-dom';
 
-function GetFilmForPayment(props){
-    var Reference = "http://localhost:8080/Home/Film/" + props.Id;
+function GetFilmForPayment(Props){
+    var Reference = "https://sakilascam-1668596780924.azurewebsites.net//Home/Film/" + Props.Id;
     const [Error, SetError] = useState(null);
+    const [Id, SetId] = useState("");
     const [Title, SetTitle] = useState("");
     const [RentRate, SetRentRate] = useState("");
     const [Rating, SetRating] = useState("");
+    const [Input, SetInput] = useState("");
+    const [Navigation, SetNavigate] = useState(false);
+    const [Hours, SetHours] = useState(null);
+
+    console.log(Input);
+    let Navigate = useNavigate();
+
+
+    const handleSubmit = event => {
+    console.log('handleSubmit ran');
+    event.preventDefault();
+    SetNavigate(true);
+    }
+
 
     useEffect(() => {
+        
+        if(Navigation){
+            SetHours(Input)
+            console.log(Hours);
+            return(Navigate("/EndPage/"+Id, {state: Input}))
+        }
         fetch(Reference)
         .then(Res => Res.json())
         .then(Film =>{
+            SetId(Film.filmId);
             SetTitle(Film.title);
             SetRentRate(Film.rentalRate);
             SetRating(Film.rating);
+
         },
         Error => {
             SetError(Error);
         }
         )
-    },[])
+    },[Navigation, Navigate])
     if(Error){
         return(
             <div>Could not load API, null values Found</div>
@@ -29,28 +52,37 @@ function GetFilmForPayment(props){
     }else{
         return(
             <div>
-                <div id="title">{Title}</div>
-                <div id="rentRate">{RentRate}</div>
-                <div id="rating">{Rating}</div>
-                <form >
+                <h1>Please Note this website does not exist! Do not put in any real card details!</h1>
+                <div id="title">You will be renting: {Title} ({Rating})</div>
+                <div id="rentRate">For the amount:  {RentRate}</div>
+                <form onSubmit={handleSubmit}>
                     <label>
-                        How long would you like to rent this film?
-                        <input type='text'/>
+                        How long would you like to rent this film? (In Hours)
                         <br></br>
-                        Card Number: 
+                        <input type='text'
+                        name ="Input"
+                        onChange= {e => SetInput(e.target.value)}
+                        />
+                        <br></br>
+                        Card Number:
+                        <br></br>
                         <input type="text"/>
                         <br></br>
-                        Expiry Month: 
+                        Expiry Month:
+                        <br></br>
                         <input type="text" />
                         <br></br>
                         Expiry Year: 
+                        <br></br>
                         <input type="text" />
                         <br></br>            
-                        Security Code: 
+                        Security Code:
+                        <br></br>
                         <input type="text" />
                     </label>
+                    
                     <br></br>
-                    <Link to={"/EndPage/"}><input type="submit" value="Submit" /> </Link>
+                    <input type="submit" value="Submit"/>
                 </form>
             </div>
         )

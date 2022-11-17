@@ -22,7 +22,7 @@ function GetAllFilms(){
     }
 
     useEffect(() => {
-        fetch("http://localhost:8080/Home/allFilms")
+        fetch("https://sakilascam-1668596780924.azurewebsites.net//Home/allFilms")
         .then(res => res.json())
         .then(FilmList =>{      
             SetFilms(FilmList);
