@@ -19,9 +19,9 @@ function GetFilm(props){
         const ActorContent = [];
         Actors.forEach(Element => {
             ActorContent.push(
-            <><div>
-                {Element.firstName} {Element.lastName},   
-            </div></>)
+            <><li>
+                {Element.firstName} {Element.lastName}   
+            </li></>)
         });
         return(
             ActorContent
@@ -32,9 +32,9 @@ function GetFilm(props){
         const CategoryContent = [];
         Categories.forEach(Element => {
             CategoryContent.push(
-            <><div>
+            <><li>
                 {Element.name}
-            </div></>)
+            </li></>)
         });
         return(
             CategoryContent
@@ -67,16 +67,18 @@ function GetFilm(props){
     }else{
         return(
             <div>
-                <div id="title">Title: {Title}</div>
-                <div id="desc">{Desc}</div>
-                <div id="rentRate">Rental Cost: {RentRate}</div>
-                <div id="rating">Rating: {Rating}</div>
+                <div id="FilmInfo">Title: {Title}</div>
+                <div id="FilmInfo">{Desc}</div>
+                <div id="FilmInfo">Rental Cost: {RentRate}</div>
+                <div id="FilmInfo">Rating: {Rating}</div>
+                <Link to={"/PaymentPage/" + Id}>
+                    <button id='RentMe'>Rent Me!</button>
+                </Link>
+                <hr></hr>
                 <div>Actors:</div>
                 <div>{Actors !== [] ? LoadActors() : null}</div>
+                <hr></hr>
                 <div>Categories: {Actors !== [] ? LoadCategories() : null}</div>
-                <Link to={"/PaymentPage/" + Id}>
-                    <button>Rent Me!</button>
-                </Link>
             </div>
         )
     }

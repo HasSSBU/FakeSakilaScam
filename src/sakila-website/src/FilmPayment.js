@@ -56,7 +56,8 @@ function GetFilmForPayment(Props){
                 <h1>Please Note this website does not exist! Do not put in any real card details!</h1>
                 <div id="title">You will be renting: {Title} ({Rating})</div>
                 <div id="rentRate">For the amount:  {RentRate}</div>
-                <form onSubmit={handleSubmit}>
+                <hr></hr>
+                <form id='FilmInfo' onSubmit={handleSubmit}>
                     <label>
                         How long would you like to rent this film? (In Hours)
                         <br></br>

@@ -16,6 +16,9 @@ body{
 #FilmData{
     font-weight: bold;
 }
-#title{
-    font-weight: bold;
+#FilmInfo{
+    line-height: 30px;
+}
+#RentMe{
+    margin-top: 30px;
 }

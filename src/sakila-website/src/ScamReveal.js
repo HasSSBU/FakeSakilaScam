@@ -27,14 +27,14 @@ function ScamBody(Props){
 
     return(
         <div>
-            <div>
+            <div id='FilmInfo'>
                 You are now renting:
                 <br></br>
-                {Title}
+                <b>{Title}</b>
                 <br></br>
                 For:
                 <br></br>
-                £{total.toFixed(2)}
+                <b>£{total.toFixed(2)}</b>
                 <br></br>
                 Enjoy your film!
             </div>
