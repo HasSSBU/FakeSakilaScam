@@ -9,7 +9,7 @@ class PaymentTest {
     Payment paymentTest2 = new Payment();
 
     @Test
-    void testGetters(){
+    void testGetAmount(){
         Assertions.assertEquals(10.5, paymentTest.getAmount());
     }
 
@@ -20,7 +20,7 @@ class PaymentTest {
     }
 
     @Test
-    void testSetters(){
+    void testSetAmount(){
         paymentTest.setAmount(12.5);
         Assertions.assertEquals(12.5, paymentTest.getAmount());
     }

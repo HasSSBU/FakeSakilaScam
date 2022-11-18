@@ -9,22 +9,24 @@ class CategoryTest {
     Category categoryTest2 = new Category();
 
     @Test
-    void testGetters(){
+    void testGetName(){
         Assertions.assertEquals("Action", categoryTest.getName());
     }
 
     @Test
-    void testGetters2(){
-        Assertions.assertNull(categoryTest2.getName());
+    void testGetId(){
         Assertions.assertEquals(0, categoryTest2.getCategoryId());
     }
 
     @Test
-    void testSetters(){
+    void testSetName(){
         categoryTest.setName("Hehe");
-        categoryTest.setCategoryId(1);
-
         Assertions.assertEquals("Hehe", categoryTest.getName());
+
+    }
+    @Test
+    void testSetId(){
+        categoryTest.setCategoryId(1);
         Assertions.assertEquals(1, categoryTest.getCategoryId());
     }
 }

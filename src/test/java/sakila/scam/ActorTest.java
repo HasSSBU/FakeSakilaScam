@@ -9,25 +9,27 @@ class ActorTest {
     Actor testActor2 = new Actor();
 
     @Test
-    void testGetters() {
+    void testGetFirstName() {
         Assertions.assertEquals("Fake",testActor.getFirstName());
-        Assertions.assertEquals("Name",testActor.getLastName());
     }
-
     @Test
-    void testGetters2(){
-        Assertions.assertNull(testActor2.getFirstName());
+    void testGetLastName(){
         Assertions.assertNull(testActor2.getLastName());
     }
 
     @Test
-    void testSetters(){
+    void testSetId(){
         testActor.setActorId(203);
-        testActor.setFirstName("notFake");
-        testActor.setLastName("lastName");
-
         Assertions.assertEquals(203,testActor.getActorId());
+    }
+    @Test
+    void testSetFirstName(){
+        testActor.setFirstName("notFake");
         Assertions.assertEquals("notFake",testActor.getFirstName());
+    }
+    @Test
+    void testSetLastName(){
+        testActor.setLastName("lastName");
         Assertions.assertEquals("lastName",testActor.getLastName());
     }
 }

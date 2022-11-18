@@ -8,8 +8,11 @@ class ActorModelTest {
     ActorModel testActor = new ActorModel("Fake", "Name");
 
     @Test
-    void testGetters() {
+    void testGetFirstName() {
         Assertions.assertEquals("Fake",testActor.getFirstName());
+    }
+    @Test
+    void testGetLastName() {
         Assertions.assertEquals("Name",testActor.getLastName());
     }
 }

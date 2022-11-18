@@ -9,44 +9,72 @@ class FilmTest {
     Film testFilm2 = new Film();
 
     @Test
-    void testGetters(){
+    void testGetTitle(){
         Assertions.assertEquals("testTitle",testFilm.getTitle());
+    }
+    @Test
+    void testGetDescription(){
         Assertions.assertEquals("testDes",testFilm.getDescription());
+    }
+    @Test
+    void testGetLanguageId(){
         Assertions.assertEquals(1,testFilm.getLanguageId());
+    }
+    @Test
+    void testGetLength(){
         Assertions.assertEquals(50,testFilm.getLength());
+    }
+    @Test
+    void testGetRentalRate(){
         Assertions.assertEquals(1, testFilm.getRentalRate());
+    }
+    @Test
+    void testGetRating(){
         Assertions.assertEquals("testRate",testFilm.getRating());
+    }
+    @Test
+    void testGetReplacemntCost(){
         Assertions.assertEquals(20.0, testFilm.getReplacementCost());
     }
 
     @Test
-    void testGetters2(){
-        Assertions.assertEquals(0, testFilm2.getFilmId());
-        Assertions.assertNull(testFilm2.getTitle());
-        Assertions.assertNull(testFilm2.getDescription());
-        Assertions.assertEquals(0 ,testFilm2.getLanguageId());
-        Assertions.assertEquals(0,testFilm2.getLength());
-        Assertions.assertEquals(0, testFilm2.getRentalRate());
-        Assertions.assertNull(testFilm2.getRating());
-        Assertions.assertEquals(0, testFilm2.getReplacementCost());
+    void testSetId(){
+        testFilm.setFilmId(203);
+        Assertions.assertEquals("testTitle1",testFilm.getTitle());
     }
     @Test
-    void testSetters(){
-        testFilm.setFilmId(203);
+    void testSetTitle(){
         testFilm.setTitle("testTitle1");
+        Assertions.assertEquals("testTitle1",testFilm.getTitle());;
+    }
+    @Test
+    void testSetDescription(){
         testFilm.setDescription("testDes1");
-        testFilm.setLanguageId(2);
-        testFilm.setLength(51);
-        testFilm.setRentalRate(2);
-        testFilm.setRating("testRate1");
-        testFilm.setReplacementCost(15.0);
-
-        Assertions.assertEquals("testTitle1",testFilm.getTitle());
         Assertions.assertEquals("testDes1",testFilm.getDescription());
+    }
+    @Test
+    void testSetLanguage(){
+        testFilm.setLanguageId(2);
         Assertions.assertEquals(2,testFilm.getLanguageId());
+    }
+    @Test
+    void testSetLength(){
+        testFilm.setLength(51);
         Assertions.assertEquals(51,testFilm.getLength());
+    }
+    @Test
+    void testSetRentalRate(){
+        testFilm.setRentalRate(2);
         Assertions.assertEquals(2, testFilm.getRentalRate());
+    }
+    @Test
+    void testSetRating(){
+        testFilm.setRating("testRate1");
         Assertions.assertEquals("testRate1",testFilm.getRating());
+    }
+    @Test
+    void testSetReplacemtnCost(){
+        testFilm.setReplacementCost(15.0);
         Assertions.assertEquals(15.0, testFilm.getReplacementCost());
     }
 

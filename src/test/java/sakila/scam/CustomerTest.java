@@ -8,32 +8,41 @@ class CustomerTest {
     Customer testCustomer2 = new Customer();
 
     @Test
-    void testGetters(){
+    void testGetFirstName(){
         Assertions.assertEquals("Hugh", testCustomer.getFirstName());
+    }
+
+    @Test
+    void testGetLastName(){
         Assertions.assertEquals("Jazz", testCustomer.getLastName());
+    }
+    @Test
+    void testGetEmail(){
         Assertions.assertEquals("HughJazz@JennaTools.com", testCustomer.getEmail());
     }
 
     @Test
-    void testGetters2(){
+    void testGetId(){
         Assertions.assertEquals(0, testCustomer2.getCustomerId());
-        Assertions.assertNull(testCustomer2.getFirstName());
-        Assertions.assertNull(testCustomer2.getLastName());
-        Assertions.assertNull(testCustomer2.getEmail());
     }
-
     @Test
-    void testSetters(){
-        testCustomer.setCustomerId(1);
+    void testSetFirstName(){
         testCustomer.setFirstName("Boo");
-        testCustomer.setLastName("Khaki");
-        testCustomer.setEmail("BooKhaki@FourSkin.com");
-
-        Assertions.assertEquals(1, testCustomer.getCustomerId());
         Assertions.assertEquals("Boo",testCustomer.getFirstName());
+    }
+    @Test
+    void testSetId(){
+        testCustomer.setCustomerId(1);
+        Assertions.assertEquals(1, testCustomer.getCustomerId());
+    }
+    @Test
+    void testSetLastName(){
+        testCustomer.setLastName("Khaki");
         Assertions.assertEquals("Khaki", testCustomer.getLastName());
+    }
+    @Test
+    void testSetEmail(){
+        testCustomer.setEmail("BooKhaki@FourSkin.com");
         Assertions.assertEquals("BooKhaki@FourSkin.com", testCustomer.getEmail());
-
-
     }
 }

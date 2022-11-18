@@ -9,23 +9,28 @@ class RentalTest {
     Rental rentalTest2 = new Rental();
 
     @Test
-    void TestGetters(){
+    void TestGetRentalDate(){
         Assertions.assertEquals("test1", rentalTest.getRentalDate());
+    }
+    @Test
+    void TestGetReturnDate(){
         Assertions.assertEquals("test2", rentalTest.getReturnDate());
     }
+
     @Test
-    void TestGetters2(){
-        Assertions.assertEquals(0, rentalTest2.getRentalId());
-        Assertions.assertNull(rentalTest2.getRentalDate());
-        Assertions.assertNull(rentalTest2.getReturnDate());
+    void TestSetRentalDate(){
+        rentalTest.setRentalDate("24/07/1998");
+        Assertions.assertEquals("24/07/1998", rentalTest.getRentalDate());
     }
     @Test
-    void TestSetters(){
-        rentalTest.setRentalDate("24/07/1998");
+    void TestSetId(){
         rentalTest.setRentalId(1);
-        rentalTest.setReturnDate("27/06/2000");
         Assertions.assertEquals(1, rentalTest.getRentalId());
-        Assertions.assertEquals("24/07/1998", rentalTest.getRentalDate());
+    }
+    @Test
+    void TestSetReturnDate(){
+        rentalTest.setReturnDate("27/06/2000");
         Assertions.assertEquals("27/06/2000", rentalTest.getReturnDate());
     }
 }
+
