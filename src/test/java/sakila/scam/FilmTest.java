@@ -40,7 +40,7 @@ class FilmTest {
     @Test
     void testSetId(){
         testFilm.setFilmId(203);
-        Assertions.assertEquals("testTitle1",testFilm.getTitle());
+        Assertions.assertEquals(203,testFilm.getFilmId());
     }
     @Test
     void testSetTitle(){
